@@ -15,54 +15,61 @@ You can provision a managed PostgreSQL database on providers such as **Neon**, *
 
 ---
 
-## 2. Backend Deployment (Express)
+## 2. Unified Vercel Deployment (Frontend & Backend Monorepo)
 
-We recommend deploying the backend node app to **Render** or **Railway**.
+Vercel supports deploying both frontend and backend directories in a unified project using the root `vercel.json` configuration we created:
 
-### Option A: Render Setup
-1. Sign in to [Render](https://render.com).
-2. Create a new **Web Service** and link your GitHub repository.
-3. Configure the following values:
-   - **Root Directory:** `backend`
-   - **Build Command:** `npm install && npm run build`
-   - **Start Command:** `npm start`
-4. Add the following **Environment Variables**:
-   - `PORT`: `5000` (or leave empty; Render assigns one)
-   - `DATABASE_URL`: *[Your PostgreSQL connection string]*
-   - `CORS_ORIGIN`: `https://your-frontend-domain.vercel.app`
+```json
+{
+    "experimentalServices": {
+        "frontend": {
+            "root": "frontend",
+            "routePrefix": "/",
+            "framework": "nextjs"
+        },
+        "backend": {
+            "root": "backend",
+            "routePrefix": "/_/backend"
+        }
+    }
+}
+```
+
+### Steps to Deploy on Vercel:
+
+1. Sign in to [Vercel](https://vercel.com).
+2. Create a **New Project** and import your GitHub monorepo (`Suasion`).
+3. Vercel will auto-detect the root `vercel.json` services configuration. It will spin up two services under the same project/domain:
+   - **Frontend Service**: Serves the Next.js app at `https://your-domain.com/`
+   - **Backend Service**: Serves the Express serverless routes at `https://your-domain.com/_/backend/`
+
+4. Add the following **Environment Variables** in your Vercel Project settings:
+   
+   **For the Backend Service (configured inside Vercel Dashboard):**
+   - `DATABASE_URL`: *[Your managed PostgreSQL connection string]*
+   - `CORS_ORIGIN`: `https://your-production-domain.com` (your Vercel project domain)
    - `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`: *[Your email SMTP credentials]*
    - `ADMIN_EMAIL`: `contact@suasiongroup.in`
+
+   **For the Frontend Service (configured inside Vercel Dashboard):**
+   - `NEXT_PUBLIC_API_URL`: `/_/backend` (Relative path: this routes client requests to the backend service hosted on the same domain)
+   - `NEXT_PUBLIC_WHATSAPP_NUMBER`: `91XXXXXXXXXX` (your WhatsApp redirect contact)
+   - `NEXT_PUBLIC_PHONE`: `+91 XXXXXXXXXX`
+   - `NEXT_PUBLIC_EMAIL`: `contact@suasiongroup.in`
+
+5. Click **Deploy**. Vercel will build the Next.js pages and compile your serverless Express function.
 
 ---
 
 ## 3. Database Sync & Migrations
 
-Once your backend is connected to the live database, you must apply the Prisma migrations:
+Once your PostgreSQL database is provisioned and the credentials are ready:
 
-1. Locally, set your `.env` connection string to the live production database URL.
-2. Run the migration sync command:
+1. Temporarily configure your local `DATABASE_URL` in `backend/.env` to reference your live production database connection string.
+2. Run the migration sync command to apply schemas:
    ```bash
    npx prisma migrate deploy
    ```
    *Note: `migrate deploy` applies pending migrations without prompting to reset data.*
+3. Revert your local `backend/.env` file to your local development database database URL.
 
----
-
-## 4. Frontend Deployment (Next.js & Vercel)
-
-Deploy the client application to **Vercel** for optimal Next.js serverless performance.
-
-1. Sign in to [Vercel](https://vercel.com).
-2. Create a **New Project** and import your GitHub repository.
-3. Configure the Project settings:
-   - **Framework Preset:** `Next.js`
-   - **Root Directory:** `frontend`
-   - **Build Command:** `npm run build`
-   - **Install Command:** `npm install`
-4. Add the following **Environment Variables**:
-   - `NEXT_PUBLIC_API_URL`: `https://your-backend-render-url.onrender.com`
-   - `NEXT_PUBLIC_WHATSAPP_NUMBER`: `91XXXXXXXXXX` (include country code, omit + and spaces)
-   - `NEXT_PUBLIC_PHONE`: `+91 XXXXXXXXXX` (display text format)
-   - `NEXT_PUBLIC_EMAIL`: `contact@suasiongroup.in`
-5. Click **Deploy**. Vercel will build the React pages and serve the site statically with server-side API configurations.
-6. Once deployed, copy the Vercel URL and update the `CORS_ORIGIN` variable in your backend settings.

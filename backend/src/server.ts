@@ -48,27 +48,33 @@ const apiLimiter = rateLimit({
 });
 
 // Apply rate limiter to all API routes
-app.use("/api/", apiLimiter);
+app.use(["/api/", "/_/backend/api/"], apiLimiter);
 
 // ---------------------- Routes ----------------------
 
 // Health Check
-app.get("/health", (req: Request, res: Response) => {
+app.get(["/health", "/_/backend/health"], (req: Request, res: Response) => {
   res.status(200).json({ status: "success", message: "Server is healthy." });
 });
 
+// Define API Router
+const apiRouter = express.Router();
+
 // Contact Messages
-app.post("/api/contact", validateBody(contactSchema), createContactMessage);
+apiRouter.post("/contact", validateBody(contactSchema), createContactMessage);
 
 // Newsletter Subscription
-app.post("/api/newsletter", validateBody(newsletterSchema), subscribeNewsletter);
+apiRouter.post("/newsletter", validateBody(newsletterSchema), subscribeNewsletter);
 
 // Consultation Inquiries / Leads
-app.post("/api/inquiries", validateBody(leadSchema), createLead);
-app.get("/api/leads", getLeads);
-app.get("/api/inquiries", getLeads); // Alias route matching front-end and docs
-app.patch("/api/inquiries/:id/status", validateBody(leadStatusSchema), updateLeadStatus);
-app.delete("/api/inquiries/:id", deleteLead);
+apiRouter.post("/inquiries", validateBody(leadSchema), createLead);
+apiRouter.get("/leads", getLeads);
+apiRouter.get("/inquiries", getLeads); // Alias route matching front-end and docs
+apiRouter.patch("/inquiries/:id/status", validateBody(leadStatusSchema), updateLeadStatus);
+apiRouter.delete("/inquiries/:id", deleteLead);
+
+// Mount router on both local and Vercel multi-service path prefixes
+app.use(["/api", "/_/backend/api"], apiRouter);
 
 // ------------------- Error Handler -------------------
 
@@ -87,7 +93,11 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
 });
 
 // Start Server
-app.listen(PORT, () => {
-  console.log(`Suasion Group backend server running on port ${PORT}`);
-  console.log(`CORS allowed from origin: ${CORS_ORIGIN}`);
-});
+if (process.env.NODE_ENV !== "production") {
+  app.listen(PORT, () => {
+    console.log(`Suasion Group backend server running on port ${PORT}`);
+    console.log(`CORS allowed from origin: ${CORS_ORIGIN}`);
+  });
+}
+
+export default app;
