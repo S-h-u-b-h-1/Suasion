@@ -50,7 +50,7 @@ erDiagram
 
 ## Database Tables & Column Specifications
 
-### 1. `leads` (Model: `Lead`)
+### 1. `suasion` (Model: `Lead`)
 Stores formal service inquiries submitted by clients on the Contact page.
 
 | Field Name | Data Type | Modifiers / Default | Description |

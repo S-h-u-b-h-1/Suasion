@@ -74,6 +74,16 @@ function ContactForm() {
     }
   }, [serviceType]);
 
+  // Determine local vs production (Vercel) relative path dynamically to avoid CORS preflight failures
+  const getApiUrl = () => {
+    if (typeof window !== "undefined") {
+      if (window.location.hostname !== "localhost") {
+        return "/_/backend";
+      }
+    }
+    return process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.consent) {
@@ -85,9 +95,12 @@ function ContactForm() {
     setStatus("loading");
     setErrorMessage("");
 
+    const mailtoUrl = getMailtoLink({ ...formData });
+
     try {
+      const apiUrl = getApiUrl();
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000"}/api/inquiries`,
+        `${apiUrl}/api/inquiries`,
         {
           method: "POST",
           headers: {
@@ -101,6 +114,10 @@ function ContactForm() {
         const resData = await response.json();
         setSubmittedLead(resData.data);
         setStatus("success");
+
+        // Immediately direct the user to their email client
+        window.location.href = mailtoUrl;
+
         setFormData({
           fullName: "",
           phone: "",
@@ -114,12 +131,18 @@ function ContactForm() {
       } else {
         const errData = await response.json();
         setStatus("error");
-        setErrorMessage(errData.message || "Failed to submit inquiry. Please try again.");
+        setErrorMessage(errData.message || "Failed to record inquiry in the database. Opening email client directly...");
+        
+        // Fallback: direct the user to email client anyway so no client is dropped
+        window.location.href = mailtoUrl;
       }
     } catch (error) {
       console.error(error);
       setStatus("error");
-      setErrorMessage("Connection error. Please check your internet or try again later.");
+      setErrorMessage("Network error connecting to database. Opening email client directly...");
+      
+      // Fallback: direct the user to email client anyway on connection failures
+      window.location.href = mailtoUrl;
     }
   };
 
@@ -135,7 +158,7 @@ function ContactForm() {
     setFormData((prev) => ({ ...prev, [name]: checked }));
   };
 
-  // Pre-generate WhatsApp message (Updated to 919903040304)
+  // Pre-generate WhatsApp message
   const whatsappUrl = `https://wa.me/${
     process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919903040304"
   }?text=Hello%20Suasion%20Group%20desk,%20I%20would%20like%20to%20schedule%20a%20consultation.`;
@@ -219,26 +242,26 @@ function ContactForm() {
             <div className="space-y-2">
               <h3 className="text-2xl font-serif font-bold text-navy">Inquiry Received & Logged</h3>
               <p className="text-xs text-charcoal/70 max-w-md mx-auto leading-relaxed">
-                Your consultation request has been successfully recorded in our database on Neon.
+                Thank you. Your consultation request has been successfully recorded in our database on Neon.
               </p>
             </div>
 
-            {/* Expeditious Email Client Direction CTA */}
+            {/* Direct Email Direction CTA */}
             {submittedLead && (
               <div className="bg-navy/5 rounded-xl border border-gold/20 p-6 text-left space-y-4 max-w-md mx-auto">
                 <div className="flex items-center gap-2 text-navy font-bold text-xs uppercase tracking-wider">
                   <Mail className="h-4.5 w-4.5 text-gold" />
-                  <span>Expedite Your Consultation</span>
+                  <span>Direct Email Draft</span>
                 </div>
                 <p className="text-[11px] text-charcoal/80 leading-relaxed">
-                  Click the button below to open your local mail client with a pre-filled template. Sending this mail directly to <strong className="text-navy">info@suasion.in</strong> ensures immediate routing to our directors.
+                  We have triggered your email client. If the mail window did not open automatically, click the button below to send your pre-filled inquiry draft directly to <strong className="text-navy">info@suasion.in</strong>.
                 </p>
                 <a
                   href={getMailtoLink(submittedLead)}
                   className="w-full inline-flex items-center justify-center py-3 bg-navy hover:bg-gold text-white hover:text-navy text-xs font-bold uppercase tracking-widest rounded transition-all duration-300 shadow-md gap-2"
                 >
                   <Send className="h-3.5 w-3.5" />
-                  Send Confirmation Email
+                  Open Email Client Again
                 </a>
               </div>
             )}
@@ -259,9 +282,29 @@ function ContactForm() {
             </h3>
 
             {status === "error" && (
-              <div className="flex gap-2.5 bg-red-50 p-4 rounded border border-red-200 text-xs text-red-800">
-                <AlertCircle className="h-4.5 w-4.5 text-red-600 shrink-0 mt-0.5" />
-                <p>{errorMessage}</p>
+              <div className="flex flex-col gap-2 bg-red-50 p-4 rounded border border-red-200 text-xs text-red-800">
+                <div className="flex gap-2.5">
+                  <AlertCircle className="h-4.5 w-4.5 text-red-600 shrink-0 mt-0.5" />
+                  <p>{errorMessage}</p>
+                </div>
+                
+                {/* Fallback button to launch mailto client on error */}
+                <div className="mt-2 pt-2 border-t border-red-200">
+                  <a
+                    href={getMailtoLink({
+                      fullName: formData.fullName || "Client",
+                      phone: formData.phone || "N/A",
+                      email: formData.email || "N/A",
+                      city: formData.city || "N/A",
+                      serviceInterest: formData.serviceInterest,
+                      preferredContactMethod: formData.preferredContactMethod,
+                      message: formData.message || "N/A",
+                    })}
+                    className="inline-flex items-center justify-center px-4 py-2 bg-navy hover:bg-gold text-white hover:text-navy rounded text-[10px] font-bold uppercase tracking-wider transition-colors"
+                  >
+                    Open Mail Client & Send Inquiry Directly
+                  </a>
+                </div>
               </div>
             )}
 
