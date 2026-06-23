@@ -72,14 +72,14 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="h-4.5 w-4.5 text-gold shrink-0" />
-                <a href={`tel:${process.env.NEXT_PUBLIC_PHONE || "+91XXXXXXXXXX"}`} className="hover:text-gold transition-colors">
-                  {process.env.NEXT_PUBLIC_PHONE || "+91 XXXXXXXXXX"}
+                <a href={`tel:${process.env.NEXT_PUBLIC_PHONE || "+919903040304"}`} className="hover:text-gold transition-colors">
+                  {process.env.NEXT_PUBLIC_PHONE || "+91 9903040304"}
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-4.5 w-4.5 text-gold shrink-0" />
-                <a href={`mailto:${process.env.NEXT_PUBLIC_EMAIL || "contact@suasiongroup.in"}`} className="hover:text-gold transition-colors">
-                  {process.env.NEXT_PUBLIC_EMAIL || "contact@suasiongroup.in"}
+                <a href={`mailto:${process.env.NEXT_PUBLIC_EMAIL || "info@suasion.in"}`} className="hover:text-gold transition-colors">
+                  {process.env.NEXT_PUBLIC_EMAIL || "info@suasion.in"}
                 </a>
               </div>
             </div>

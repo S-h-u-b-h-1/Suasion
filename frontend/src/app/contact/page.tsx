@@ -2,7 +2,41 @@
 
 import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { Mail, Phone, MapPin, CheckCircle2, AlertCircle, MessageSquare, ArrowRight } from "lucide-react";
+import { Mail, Phone, MapPin, CheckCircle2, AlertCircle, MessageSquare, ArrowRight, Send } from "lucide-react";
+
+// Email mailto link generator based on service interest
+const getMailtoLink = (lead: any) => {
+  if (!lead) return "#";
+  const email = "info@suasion.in";
+  
+  const subjectTemplates: Record<string, string> = {
+    GENERAL: `General Financial Inquiry - ${lead.fullName}`,
+    NBFC_FINANCE: `NBFC Lending / Business Credit Inquiry - ${lead.fullName}`,
+    INSURANCE: `Life Insurance & Estate Preservation Request - ${lead.fullName}`,
+    PROPERTY_INVESTMENT: `Property Advisory & Yield Consultation - ${lead.fullName}`,
+    MUTUAL_FUND: `Mutual Fund Portfolio & SIP Allocation - ${lead.fullName}`,
+    PARTNERSHIP: `Associate Partnership Proposal - ${lead.fullName}`,
+  };
+
+  const bodyTemplates: Record<string, string> = {
+    GENERAL: `Dear Suasion Group Advisory Desk,\n\nI have submitted an inquiry for general financial services on your website. Below is a copy of my details:\n\n- Name: ${lead.fullName}\n- Phone: ${lead.phone}\n- City: ${lead.city}\n- Preferred Channel: ${lead.preferredContactMethod}\n- Inquiry Details:\n${lead.message}\n\nI look forward to discussing this further.\n\nBest regards,\n${lead.fullName}`,
+    
+    NBFC_FINANCE: `Dear Suasion Finvest Lending Desk,\n\nI have submitted a corporate/business financing inquiry. Below are the details:\n\n- Name: ${lead.fullName}\n- Phone: ${lead.phone}\n- City: ${lead.city}\n- Preferred Channel: ${lead.preferredContactMethod}\n- Financing Details:\n${lead.message}\n\nI look forward to discussing our borrowing requirements with an advisor.\n\nBest regards,\n${lead.fullName}`,
+    
+    INSURANCE: `Dear Suasion Services Protection Desk,\n\nI have submitted a life insurance / estate protection consultation request. Below are my details:\n\n- Name: ${lead.fullName}\n- Phone: ${lead.phone}\n- City: ${lead.city}\n- Preferred Channel: ${lead.preferredContactMethod}\n- Protection Details:\n${lead.message}\n\nI look forward to our estate planning discussion.\n\nBest regards,\n${lead.fullName}`,
+    
+    PROPERTY_INVESTMENT: `Dear Suasion Services Property Desk,\n\nI have submitted an inquiry regarding property investments and rental yield advisory. Below are the details:\n\n- Name: ${lead.fullName}\n- Phone: ${lead.phone}\n- City: ${lead.city}\n- Preferred Channel: ${lead.preferredContactMethod}\n- Property Inquiry Details:\n${lead.message}\n\nI look forward to reviewing commercial and real estate yield opportunities.\n\nBest regards,\n${lead.fullName}`,
+    
+    MUTUAL_FUND: `Dear Suasion Securities Wealth Desk,\n\nI have submitted an inquiry for mutual fund systematic investment planning (SIP) and portfolio allocation review. Below are the details:\n\n- Name: ${lead.fullName}\n- Phone: ${lead.phone}\n- City: ${lead.city}\n- Preferred Channel: ${lead.preferredContactMethod}\n- Portfolio Details:\n${lead.message}\n\nI look forward to speaking with a wealth manager.\n\nBest regards,\n${lead.fullName}`,
+    
+    PARTNERSHIP: `Dear Suasion Group Directors,\n\nI have submitted a partnership proposal on the Suasion Group desk. Below are the details:\n\n- Name: ${lead.fullName}\n- Phone: ${lead.phone}\n- City: ${lead.city}\n- Preferred Channel: ${lead.preferredContactMethod}\n- Proposal Details:\n${lead.message}\n\nI look forward to discussing associate synergy options.\n\nBest regards,\n${lead.fullName}`,
+  };
+
+  const subject = encodeURIComponent(subjectTemplates[lead.serviceInterest] || `Inquiry - ${lead.fullName}`);
+  const body = encodeURIComponent(bodyTemplates[lead.serviceInterest] || lead.message);
+  
+  return `mailto:${email}?subject=${subject}&body=${body}`;
+};
 
 // Wrap form in a suspense component since it uses useSearchParams
 function ContactForm() {
@@ -22,6 +56,7 @@ function ContactForm() {
 
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [submittedLead, setSubmittedLead] = useState<any>(null);
 
   // Map query types to enum values
   useEffect(() => {
@@ -63,6 +98,8 @@ function ContactForm() {
       );
 
       if (response.ok) {
+        const resData = await response.json();
+        setSubmittedLead(resData.data);
         setStatus("success");
         setFormData({
           fullName: "",
@@ -98,9 +135,9 @@ function ContactForm() {
     setFormData((prev) => ({ ...prev, [name]: checked }));
   };
 
-  // Pre-generate WhatsApp message
+  // Pre-generate WhatsApp message (Updated to 919903040304)
   const whatsappUrl = `https://wa.me/${
-    process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919000000000"
+    process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919903040304"
   }?text=Hello%20Suasion%20Group%20desk,%20I%20would%20like%20to%20schedule%20a%20consultation.`;
 
   return (
@@ -131,8 +168,8 @@ function ContactForm() {
             <Phone className="h-6 w-6 text-gold shrink-0 mt-0.5" />
             <div>
               <h4 className="font-bold text-navy text-sm">Direct Phone</h4>
-              <a href={`tel:${process.env.NEXT_PUBLIC_PHONE || "+91XXXXXXXXXX"}`} className="text-xs text-charcoal/70 hover:text-gold transition-colors block mt-1">
-                {process.env.NEXT_PUBLIC_PHONE || "+91 XXXXXXXXXX"}
+              <a href={`tel:${process.env.NEXT_PUBLIC_PHONE || "+919903040304"}`} className="text-xs text-charcoal/70 hover:text-gold transition-colors block mt-1">
+                {process.env.NEXT_PUBLIC_PHONE || "+91 9903040304"}
               </a>
             </div>
           </div>
@@ -141,8 +178,8 @@ function ContactForm() {
             <Mail className="h-6 w-6 text-gold shrink-0 mt-0.5" />
             <div>
               <h4 className="font-bold text-navy text-sm">Email Inbox</h4>
-              <a href={`mailto:${process.env.NEXT_PUBLIC_EMAIL || "contact@suasiongroup.in"}`} className="text-xs text-charcoal/70 hover:text-gold transition-colors block mt-1">
-                {process.env.NEXT_PUBLIC_EMAIL || "contact@suasiongroup.in"}
+              <a href={`mailto:${process.env.NEXT_PUBLIC_EMAIL || "info@suasion.in"}`} className="text-xs text-charcoal/70 hover:text-gold transition-colors block mt-1">
+                {process.env.NEXT_PUBLIC_EMAIL || "info@suasion.in"}
               </a>
             </div>
           </div>
@@ -180,17 +217,40 @@ function ContactForm() {
               <CheckCircle2 className="h-10 w-10" />
             </div>
             <div className="space-y-2">
-              <h3 className="text-2xl font-serif font-bold text-navy">Inquiry Received</h3>
-              <p className="text-xs text-charcoal/70 max-w-sm mx-auto leading-relaxed">
-                Thank you for contacting Suasion Group. An advisor will review your request and get in touch within one business day via your preferred channel.
+              <h3 className="text-2xl font-serif font-bold text-navy">Inquiry Received & Logged</h3>
+              <p className="text-xs text-charcoal/70 max-w-md mx-auto leading-relaxed">
+                Your consultation request has been successfully recorded in our database on Neon.
               </p>
             </div>
-            <button
-              onClick={() => setStatus("idle")}
-              className="px-6 py-2.5 bg-navy text-white hover:bg-gold hover:text-navy text-xs font-bold uppercase tracking-wider rounded transition-colors"
-            >
-              Submit Another Inquiry
-            </button>
+
+            {/* Expeditious Email Client Direction CTA */}
+            {submittedLead && (
+              <div className="bg-navy/5 rounded-xl border border-gold/20 p-6 text-left space-y-4 max-w-md mx-auto">
+                <div className="flex items-center gap-2 text-navy font-bold text-xs uppercase tracking-wider">
+                  <Mail className="h-4.5 w-4.5 text-gold" />
+                  <span>Expedite Your Consultation</span>
+                </div>
+                <p className="text-[11px] text-charcoal/80 leading-relaxed">
+                  Click the button below to open your local mail client with a pre-filled template. Sending this mail directly to <strong className="text-navy">info@suasion.in</strong> ensures immediate routing to our directors.
+                </p>
+                <a
+                  href={getMailtoLink(submittedLead)}
+                  className="w-full inline-flex items-center justify-center py-3 bg-navy hover:bg-gold text-white hover:text-navy text-xs font-bold uppercase tracking-widest rounded transition-all duration-300 shadow-md gap-2"
+                >
+                  <Send className="h-3.5 w-3.5" />
+                  Send Confirmation Email
+                </a>
+              </div>
+            )}
+
+            <div>
+              <button
+                onClick={() => setStatus("idle")}
+                className="px-6 py-2.5 bg-white text-navy hover:bg-ivory border border-navy/20 text-xs font-bold uppercase tracking-wider rounded transition-colors"
+              >
+                Submit Another Inquiry
+              </button>
+            </div>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-6">

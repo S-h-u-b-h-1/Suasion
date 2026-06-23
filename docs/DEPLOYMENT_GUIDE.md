@@ -49,13 +49,13 @@ Vercel supports deploying both frontend and backend directories in a unified pro
    - `DATABASE_URL`: *[Your managed PostgreSQL connection string]*
    - `CORS_ORIGIN`: `https://your-production-domain.com` (your Vercel project domain)
    - `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`: *[Your email SMTP credentials]*
-   - `ADMIN_EMAIL`: `contact@suasiongroup.in`
+   - `ADMIN_EMAIL`: `info@suasion.in`
 
    **For the Frontend Service (configured inside Vercel Dashboard):**
    - `NEXT_PUBLIC_API_URL`: `/_/backend` (Relative path: this routes client requests to the backend service hosted on the same domain)
-   - `NEXT_PUBLIC_WHATSAPP_NUMBER`: `91XXXXXXXXXX` (your WhatsApp redirect contact)
-   - `NEXT_PUBLIC_PHONE`: `+91 XXXXXXXXXX`
-   - `NEXT_PUBLIC_EMAIL`: `contact@suasiongroup.in`
+   - `NEXT_PUBLIC_WHATSAPP_NUMBER`: `919903040304`
+   - `NEXT_PUBLIC_PHONE`: `+91 9903040304`
+   - `NEXT_PUBLIC_EMAIL`: `info@suasion.in`
 
 5. Click **Deploy**. Vercel will build the Next.js pages and compile your serverless Express function.
 

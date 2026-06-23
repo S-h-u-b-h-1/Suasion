@@ -85,7 +85,7 @@ export default function Privacy() {
             You have the right to request a copy of the personal data we hold about you. Furthermore, you may request us to update, correct, or permanently delete your contact information from our active databases. 
           </p>
           <p>
-            To exercise these rights, please contact our data manager at: <a href="mailto:contact@suasiongroup.in" className="text-navy hover:text-gold font-bold transition-colors">contact@suasiongroup.in</a>. We will process your request within 48 business hours.
+            To exercise these rights, please contact our data manager at: <a href="mailto:info@suasion.in" className="text-navy hover:text-gold font-bold transition-colors">info@suasion.in</a>. We will process your request within 48 business hours.
           </p>
         </div>
 

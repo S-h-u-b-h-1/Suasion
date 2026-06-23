@@ -31,7 +31,7 @@ export async function sendLeadNotification(leadData: {
   message: string;
 }) {
   const transporter = getTransporter();
-  const adminEmail = process.env.ADMIN_EMAIL || "contact@suasiongroup.in";
+  const adminEmail = process.env.ADMIN_EMAIL || "info@suasion.in";
 
   const emailSubject = `[New Lead] Suasion Group: ${leadData.serviceInterest} Inquiry from ${leadData.fullName}`;
   const emailHtml = `
