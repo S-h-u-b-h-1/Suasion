@@ -19,7 +19,7 @@ import {
   Layers
 } from "lucide-react";
 
-const ThreeGoldSphere = dynamic(() => import("../components/effects/ThreeGoldSphere"), { ssr: false });
+const ThreeRevolvingLogo = dynamic(() => import("../components/effects/ThreeRevolvingLogo"), { ssr: false });
 const ThreeGoldParticles = dynamic(() => import("../components/effects/ThreeGoldParticles"), { ssr: false });
 
 // FAQ Data
@@ -100,25 +100,9 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
-              <div className="w-full max-w-[420px] aspect-[4/5] rounded-2xl glass-panel-dark relative p-8 flex flex-col justify-between shadow-2xl relative overflow-hidden">
-                <div className="absolute inset-0 z-0">
-                  <ThreeGoldSphere />
-                </div>
-                <div className="relative z-10 flex flex-col justify-between h-full pointer-events-none">
-                  {/* Top metadata */}
-                  <div className="flex justify-between items-start">
-                    <img src="/logo.png" alt="Suasion Group Logo" className="h-9 w-auto object-contain" />
-                    <span className="text-[9px] uppercase font-bold tracking-widest text-gold bg-navy/80 px-2.5 py-1 rounded border border-gold/20 backdrop-blur-sm">
-                      Interactive 3D
-                    </span>
-                  </div>
-                  {/* Floating instructions */}
-                  <div className="text-center py-3 bg-navy/80 backdrop-blur-md rounded-lg border border-gold/15 mt-auto pointer-events-auto">
-                    <p className="text-[10px] text-gold uppercase tracking-wider font-semibold">Suasion Wealth Nexus</p>
-                    <p className="text-[9px] text-white/70 mt-0.5 px-2">Move cursor over the sphere to interact with network nodes</p>
-                  </div>
-                </div>
+            <div className="lg:col-span-5 relative flex justify-center lg:justify-end items-center w-full">
+              <div className="w-full max-w-[480px] aspect-square relative flex items-center justify-center">
+                <ThreeRevolvingLogo />
               </div>
             </div>
 
