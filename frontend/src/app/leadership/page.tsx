@@ -24,20 +24,20 @@ const leaders = [
     name: "Sumaan Shree Kataruka",
     title: "Director",
     credentials: "Insurance & Real Asset Structuring Advisor",
-    verticals: "Suasion Services Private Limited",
+    verticals: "Suasion Services Pvt Ltd & Suasion Infrastructure Pvt Ltd",
     expertise: [
       "Life Insurance Portfolio Audits",
       "Estate Preservation & Legacy Planning",
-      "Real Estate Market Modeling",
-      "Guaranteed Wealth Structures"
+      "Real Estate Yield Analysis & Sourcing",
+      "Guaranteed Asset Allocation"
     ],
-    bio: "Sumaan Shree Kataruka leads operations for Suasion Services Private Limited, managing critical corporate insurance relationships and property investments. With extensive experience in insurance distribution, she coordinates our relationships with partners like Bajaj Allianz, LIC, and Birla Sun Life. Her focus remains on protecting family legacies and modeling stable, yield-generating property holdings."
+    bio: "Sumaan Shree Kataruka leads operations for Suasion Services Private Limited and Suasion Infrastructure Private Limited. With extensive experience in estate planning, she manages the group's corporate insurance relationships with Bajaj Allianz, LIC, and Aditya Birla Sun Life. Concurrently, she oversees property investment advisory, evaluating commercial and residential portfolios to structure stable, inflation-hedged yields for HNI families."
   },
   {
     name: "Shubhaang Kataruka",
     title: "Director & Next-Gen Leader",
     credentials: "B.Tech & Wealth Advisory Specialist",
-    verticals: "Suasion Services & Suasion Securities",
+    verticals: "Suasion Securities & Suasion Services",
     expertise: [
       "Digital Financial Strategies",
       "Mutual Fund Distribution Desk",

@@ -17,7 +17,13 @@ const timelineData = [
     year: "2011",
     title: "Diversification into Suasion Services",
     subtitle: "Incorporated on 18 August 2011",
-    details: "To protect the accumulated wealth of our expanding clientele, we launched Suasion Services Private Limited. This vertical introduced specialized life insurance planning, partnering with Bajaj Allianz Life, LIC, and Birla Sun Life. Concurrently, we began offering property investment advisory to guide HNI clients on real estate portfolios."
+    details: "To protect the accumulated wealth of our expanding clientele, we launched Suasion Services Private Limited. This vertical introduced specialized life insurance planning and estate protection auditing, partnering with Bajaj Allianz Life, LIC, and Aditya Birla Sun Life to secure family wealth from business liabilities."
+  },
+  {
+    year: "2017",
+    title: "Incorporation of Suasion Infrastructure",
+    subtitle: "Incorporated on 12 May 2017",
+    details: "To address client demand for stable, yield-generating physical assets, we incorporated Suasion Infrastructure Private Limited. This dedicated entity focuses on sourcing premium commercial real estate, modeling net-of-tax rental yields, and conducting thorough due diligence to protect capital in property acquisitions."
   },
   {
     year: "2024",

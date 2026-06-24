@@ -212,24 +212,24 @@ export default function Services() {
         </div>
       </section>
 
-      {/* 4. Property Investments / Suasion Services */}
+      {/* 4. Property Investments / Suasion Infrastructure */}
       <section id="property" className="scroll-mt-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-2xl border border-gold/15 p-8 md:p-12 shadow-sm space-y-8">
           
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-gold/15 pb-6">
             <div className="space-y-1">
-              <span className="text-xs uppercase font-bold text-gold tracking-widest block">Suasion Services Private Limited</span>
-              <h2 className="text-2xl md:text-3xl font-serif font-bold text-navy">Property Investment Advisory</h2>
+              <span className="text-xs uppercase font-bold text-gold tracking-widest block">Suasion Infrastructure Private Limited</span>
+              <h2 className="text-2xl md:text-3xl font-serif font-bold text-navy">Property Investment Advisory & Real Assets</h2>
             </div>
             <span className="text-[10px] uppercase font-bold tracking-widest bg-navy text-white px-3 py-1.5 rounded">
-              Real Asset Planning
+              Incorporated 2017
             </span>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             <div className="lg:col-span-7 space-y-6">
               <p className="text-sm text-charcoal/80 leading-relaxed text-wrap">
-                Real estate constitutes a crucial component of HNI wealth. We provide property investment advisory services, analyzing rental yields, commercial asset valuations, and capital appreciation potential across key hubs. Our advisory includes strict review of property documentation and legal titles to protect your capital.
+                Real estate is a foundational asset class for preserving generational wealth and generating robust cash flows. Through **Suasion Infrastructure Private Limited**, we provide comprehensive property investment advisory. We analyze net-of-tax rental yields, structure commercial and residential asset acquisitions, model capital appreciation, and coordinate multi-step title and legal due diligence to safeguard your real estate investments.
               </p>
 
               <h3 className="font-serif font-bold text-navy text-lg">Property Advisory Scope:</h3>

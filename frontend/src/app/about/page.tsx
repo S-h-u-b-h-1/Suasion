@@ -68,13 +68,13 @@ export default function About() {
             </h2>
             <div className="space-y-4 text-charcoal/80 text-sm leading-relaxed text-wrap">
               <p>
-                In 1995, Ashok Kataruka established Suasion Finvest Private Limited as a dedicated non-banking financial company (NBFC) in Kolkata. Over the subsequent decades, the financial landscape transformed, yet our core commitment to relationship-led financial stewardship remained unchanged.
+                In 1995, Ashok Kataruka, a senior Chartered Accountant, established Suasion Finvest Private Limited as a licensed Non-Banking Financial Company (NBFC) to supply structured business credit and working capital to Kolkata's trade houses. Over the subsequent three decades, as the financial landscape matured, the Kataruka family maintained a conservative, risk-managed philosophy that prioritized personal accountability over transactional velocity.
               </p>
               <p>
-                As client needs expanded, we grew. In 2011, we incorporated Suasion Services Private Limited to manage life insurance distribution and property investment advisory, safeguarding our clients' assets and real estate portfolios. In 2024, to meet the needs of a new generation of wealth builders, we launched Suasion Securities, introducing digitized mutual fund distribution and goal-based portfolio reviews.
+                As our clients' wealth accumulated, they required focused estate protection and asset allocation. In 2011, we incorporated Suasion Services Private Limited to distribute life insurance and annuity portfolios. In 2017, responding to the need for institutionalized real asset placement, we incorporated **Suasion Infrastructure Private Limited** to deliver property investment advisory and commercial real estate due diligence. In 2024, to serve the next generation of wealth builders, we launched Suasion Securities to handle digitized mutual fund distribution and goal-based Systematic Investment Plans (SIPs).
               </p>
               <p>
-                Today, Suasion Group operates as a fully integrated financial services group. We manage the delicate balance between conservative wealth protection and active growth planning. We are proud to call Kolkata our home and proud to serve the families that drive Eastern India's economy.
+                Today, Suasion Group represents a multi-generational family office operating with a single standard of care. By blending traditional accounting wisdom with modern digital portfolio models, we help families protect what they have built and grow their assets with discipline. We remain proudly family-owned and relationship-focused, serving as Kolkata's trusted financial partner.
               </p>
             </div>
           </div>

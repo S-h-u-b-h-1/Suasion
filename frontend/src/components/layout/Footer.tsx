@@ -110,7 +110,7 @@ export default function Footer() {
               <li>
                 <Link href="/services#property" className="hover:text-gold transition-colors flex items-center gap-1.5">
                   <ShieldCheck className="h-3.5 w-3.5 text-gold" />
-                  Property Investments
+                  Suasion Infrastructure (Property)
                 </Link>
               </li>
               <li>
@@ -198,7 +198,10 @@ export default function Footer() {
             <strong className="text-gold">Suasion Finvest Private Limited:</strong> All financial services and lending options are subject to regulatory norms, eligibility criteria, credit checks, and internal assessments.
           </p>
           <p>
-            <strong className="text-gold">Suasion Services Private Limited:</strong> Insurance is the subject matter of solicitation. Mutual funds and property investments are subject to market risks. Please read all scheme-related documents carefully before investing. Partners: Bajaj Allianz Life Insurance, LIC, Aditya Birla Sun Life Insurance.
+            <strong className="text-gold">Suasion Services Private Limited:</strong> Insurance is the subject matter of solicitation. Policies and payouts are subject to the terms of the policy contract issued by our partners: Bajaj Allianz Life Insurance, LIC, and Aditya Birla Sun Life Insurance.
+          </p>
+          <p>
+            <strong className="text-gold">Suasion Infrastructure Private Limited:</strong> Property investments are subject to market risks, municipal clearances, and title verification. Past yield trends do not guarantee future returns.
           </p>
           <p>
             <strong className="text-gold">Suasion Securities:</strong> Mutual fund distribution is governed by AMFI guidelines. Mutual fund investments are subject to market risks. Past performance does not guarantee future results.

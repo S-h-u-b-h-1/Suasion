@@ -26,7 +26,7 @@ const ThreeGoldParticles = dynamic(() => import("../components/effects/ThreeGold
 const faqs = [
   {
     question: "What entities comprise Suasion Group?",
-    answer: "Suasion Group operates through three core verticals: Suasion Finvest Private Limited (our NBFC lending backbone, established in 1995), Suasion Services Private Limited (focusing on life insurance distribution and property investments), and Suasion Securities (our modern wealth management and mutual fund distribution arm, launched in 2024)."
+    answer: "Suasion Group operates through four core verticals: Suasion Finvest Private Limited (our NBFC lending backbone, established in 1995), Suasion Services Private Limited (focusing on life insurance distribution, established in 2011), Suasion Infrastructure Private Limited (focusing on property investment advisory and infrastructure development, established in 2017), and Suasion Securities (our modern wealth management and mutual fund distribution arm, launched in 2024)."
   },
   {
     question: "Where is Suasion Group based?",
@@ -140,8 +140,8 @@ export default function Home() {
               <span className="block text-xs sm:text-sm uppercase tracking-widest text-white/70">Legacy of Trust</span>
             </div>
             <div className="space-y-2">
-              <span className="block text-4xl sm:text-5xl font-bold text-gold stats-number">3+</span>
-              <span className="block text-xs sm:text-sm uppercase tracking-widest text-white/70">Core Verticals</span>
+              <span className="block text-4xl sm:text-5xl font-bold text-gold stats-number">4</span>
+              <span className="block text-xs sm:text-sm uppercase tracking-widest text-white/70">Core Companies</span>
             </div>
             <div className="space-y-2">
               <span className="block text-4xl sm:text-5xl font-bold text-gold stats-number">Kolkata</span>
@@ -169,10 +169,10 @@ export default function Home() {
           </div>
           <div className="lg:col-span-7 space-y-6 text-charcoal/80 leading-relaxed text-wrap">
             <p>
-              Established on 05 January 1995 with the incorporation of Suasion Finvest Private Limited, Suasion Group has grown from a specialized NBFC lending company into a comprehensive financial services house. For over three decades, we have remained family-owned, relationship-driven, and conservative in risk-management, while adopting modern technology.
+              Established on 05 January 1995 with the incorporation of Suasion Finvest Private Limited by Ashok Kataruka, Suasion Group has evolved from a pioneering NBFC lending company into a comprehensive multi-company family office. For over three decades, the Kataruka family has remained committed to Kolkata's business community, serving three generations of clients with an unyielding standard of relationship-driven, conservative stewardship.
             </p>
             <p>
-              We believe in personalized financial planning. Whether helping a local business secure expansion capital, helping a family protect their estate through structured life insurance, advising HNIs on property yield portfolios, or managing wealth via custom mutual fund SIPs—we operate under one guiding philosophy: <strong>your long-term trust is our ultimate asset</strong>.
+              Our operations span structured corporate lending (Suasion Finvest), generational life insurance protection (Suasion Services), commercial property yield advisory (Suasion Infrastructure), and active mutual fund wealth allocation (Suasion Securities). Under the guiding hand of the Kataruka family, we bridges traditional financial discipline with modern digital portfolio management tools, operating under a singular commitment: <strong>your long-term trust is our ultimate asset</strong>.
             </p>
             <div>
               <Link 
@@ -201,7 +201,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             
             {/* Card 1: Suasion Finvest */}
             <div className="glass-panel glass-panel-hover p-8 rounded-xl flex flex-col justify-between h-full bg-white/5 border-gold/15">
@@ -253,14 +253,14 @@ export default function Home() {
                 </div>
                 <div className="space-y-2">
                   <span className="text-[10px] font-bold uppercase tracking-widest text-gold block">
-                    Protection & Real Assets
+                    Protection Arm
                   </span>
                   <h3 className="text-xl font-serif font-bold text-white">
                     Suasion Services Pvt Ltd
                   </h3>
                 </div>
                 <p className="text-sm text-white/70 leading-relaxed">
-                  Our protection and asset planning arm. We structure comprehensive life insurance portfolios and advise on strategic property investments for capital growth and yields.
+                  Our dedicated estate protection and life insurance solicitation arm. We distribute custom plans to hedge family liabilities and secure legacy payouts from leading insurers.
                 </p>
                 <ul className="text-xs space-y-2.5 text-white/60">
                   <li className="flex items-center gap-2">
@@ -273,7 +273,7 @@ export default function Home() {
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-gold shrink-0" />
-                    Commercial & Residential Real Estate
+                    Incorporated 18 August 2011
                   </li>
                 </ul>
               </div>
@@ -287,7 +287,49 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Card 3: Suasion Securities */}
+            {/* Card 3: Suasion Infrastructure */}
+            <div className="glass-panel glass-panel-hover p-8 rounded-xl flex flex-col justify-between h-full bg-white/5 border-gold/15">
+              <div className="space-y-6">
+                <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center border border-gold/30 text-gold shadow-sm">
+                  <Building2 className="h-6 w-6" />
+                </div>
+                <div className="space-y-2">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-gold block">
+                    Property & Real Assets
+                  </span>
+                  <h3 className="text-xl font-serif font-bold text-white">
+                    Suasion Infrastructure Pvt Ltd
+                  </h3>
+                </div>
+                <p className="text-sm text-white/70 leading-relaxed">
+                  Our real estate investment advisory arm. We help clients acquire high-yield commercial and residential properties, providing rental yield modeling and rigorous due diligence.
+                </p>
+                <ul className="text-xs space-y-2.5 text-white/60">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-gold shrink-0" />
+                    Commercial Sourcing & Yield Modeling
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-gold shrink-0" />
+                    Title Due Diligence & Market Analysis
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-gold shrink-0" />
+                    Incorporated 12 May 2017
+                  </li>
+                </ul>
+              </div>
+              <div className="pt-8">
+                <Link 
+                  href="/services#property"
+                  className="w-full inline-flex items-center justify-center py-2.5 rounded text-xs font-bold uppercase tracking-wider bg-gold text-navy hover:bg-white hover:text-navy transition-all duration-300 font-bold"
+                >
+                  Explore Property
+                </Link>
+              </div>
+            </div>
+
+            {/* Card 4: Suasion Securities */}
             <div className="glass-panel glass-panel-hover p-8 rounded-xl flex flex-col justify-between h-full bg-white/5 border-gold/15">
               <div className="space-y-6">
                 <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center border border-gold/30 text-gold shadow-sm">
@@ -506,7 +548,25 @@ export default function Home() {
                   Suasion Services Expansion
                 </h4>
                 <p className="text-xs text-charcoal/70 mt-1">
-                  Launched protection planning (life insurance distribution) and real estate asset advisory.
+                  Launched protection planning and life insurance distribution to protect family wealth.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Milestone 2.5 */}
+          <div className="relative pl-8 md:pl-12">
+            <div className="absolute -left-[9px] top-1.5 w-4.5 h-4.5 rounded-full bg-gold border border-white" />
+            <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8">
+              <span className="text-lg font-bold text-navy stats-number shrink-0 md:absolute md:-left-24 md:text-right md:w-20">
+                2017
+              </span>
+              <div>
+                <h4 className="font-serif font-bold text-base text-navy">
+                  Suasion Infrastructure Incorporated
+                </h4>
+                <p className="text-xs text-charcoal/70 mt-1">
+                  Incorporated a dedicated real estate advisory and property investment vertical to evaluate commercial and rental yield portfolios.
                 </p>
               </div>
             </div>
@@ -585,7 +645,7 @@ export default function Home() {
                 </p>
               </div>
               <p className="text-xs text-charcoal/70 leading-relaxed">
-                Central leadership overseeing insurance protection portfolios and estate structuring.
+                Central leadership overseeing life insurance protection, estate planning, and commercial property investments.
               </p>
             </div>
 

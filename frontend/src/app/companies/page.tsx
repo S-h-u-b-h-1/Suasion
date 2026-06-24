@@ -3,7 +3,7 @@ import { Building2, ShieldCheck, TrendingUp, Calendar, ArrowRight, ShieldAlert }
 
 export const metadata = {
   title: "Group Companies | Structure & Verticals",
-  description: "View the legal corporate structures of Suasion Group, including Suasion Finvest Private Limited, Suasion Services Private Limited, and Suasion Securities.",
+  description: "View the legal corporate structures of Suasion Group, including Suasion Finvest Private Limited, Suasion Services Private Limited, Suasion Infrastructure Private Limited, and Suasion Securities.",
 };
 
 const companies = [
@@ -19,15 +19,26 @@ const companies = [
     btnText: "Lending Solutions"
   },
   {
-    vertical: "Protection & Assets Arm",
+    vertical: "Protection Arm",
     name: "Suasion Services Private Limited",
     icon: ShieldCheck,
-    role: "The estate protection and real asset planning vertical, distributing insurance portfolios and managing property investment advisory.",
+    role: "The estate protection and life insurance planning arm, distributing customized protection plans and wealth reservation strategies.",
     incorporation: "18 August 2011",
-    category: "Insurance Distribution & Property Advisory",
-    details: "Suasion Services protects family wealth by distributing life insurance, term plans, guaranteed income products, and retirement annuities. In addition, it advises corporate and HNI clients on real estate, helping them evaluate high-yield commercial assets, perform rental returns modeling, and execute legal due diligence.",
+    category: "Life Insurance Distribution & Solicitations",
+    details: "Suasion Services protects family wealth by distributing life insurance, term plans, guaranteed income products, and retirement annuities from top-tier partners Bajaj Allianz Life, LIC, and Aditya Birla Sun Life. Our focus is ensuring robust risk hedging and estate preservation across generations.",
     link: "/services#insurance",
-    btnText: "Advisory Services"
+    btnText: "Protection Services"
+  },
+  {
+    vertical: "Property & Infrastructure Arm",
+    name: "Suasion Infrastructure Private Limited",
+    icon: Building2,
+    role: "The real asset investment and property advisory arm, helping clients deploy capital into high-yield commercial and residential portfolios.",
+    incorporation: "12 May 2017",
+    category: "Property Investment Advisory & Infrastructure Development",
+    details: "Suasion Infrastructure assists corporate, HNI, and family clients in identifying, evaluating, and acquiring high-yield commercial and residential real estate assets. We provide rental return modeling, site diligence, lease negotiations, and long-term asset management.",
+    link: "/services#property",
+    btnText: "Property Advisory"
   },
   {
     vertical: "Wealth Arm",
@@ -56,7 +67,7 @@ export default function Companies() {
             Our Operating Entities
           </h1>
           <p className="text-base text-charcoal/80">
-            Suasion Group coordinates specialized services through three distinct corporate verticals to provide focused expertise.
+            Suasion Group coordinates specialized services through four distinct corporate verticals to provide focused expertise.
           </p>
         </div>
       </section>

@@ -58,10 +58,10 @@ export default function Compliance() {
         <div className="space-y-3">
           <h2 className="text-lg font-serif font-bold text-navy flex items-center gap-2">
             <ShieldCheck className="h-5 w-5 text-gold" />
-            3. Property Investment Advisory (Suasion Services Private Limited)
+            3. Property Investment Advisory & Infrastructure (Suasion Infrastructure Private Limited)
           </h2>
           <p className="text-xs sm:text-sm text-charcoal/70 leading-relaxed text-wrap">
-            Property investment advisory and real estate models are based on market observations, historical rental yield trends, and developer-provided statistics. Property values and yields can fluctuate based on economic cycles, location demand, tax structures, and local municipal guidelines. All acquisitions must be verified via independent legal due diligence, title inspections, and physical audits. Suasion Group does not accept liability for losses arising from property transaction cycles.
+            Property investment advisory and real estate models are based on market observations, historical rental yield trends, and developer-provided statistics. Property values and yields can fluctuate based on economic cycles, location demand, tax structures, and local municipal guidelines. All acquisitions must be verified via independent legal due diligence, title inspections, and physical audits. Suasion Infrastructure Private Limited does not accept liability for losses arising from property transaction cycles.
           </p>
         </div>
 
