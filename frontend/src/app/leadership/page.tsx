@@ -9,6 +9,7 @@ export const metadata = {
 const leaders = [
   {
     name: "Ashok Kataruka",
+    image: "/ashok_kataruka.jpg",
     title: "Senior Leader & Founder",
     credentials: "Chartered Accountant (CA)",
     verticals: "Suasion Finvest Private Limited",
@@ -22,6 +23,7 @@ const leaders = [
   },
   {
     name: "Sumaan Shree Kataruka",
+    image: "/sumaan_kataruka.jpg",
     title: "Director",
     credentials: "Insurance & Real Asset Structuring Advisor",
     verticals: "Suasion Services Pvt Ltd & Suasion Infrastructure Pvt Ltd",
@@ -79,11 +81,11 @@ export default function Leadership() {
                 
                 {/* Left Profile Area */}
                 <div className="lg:col-span-4 space-y-6 text-center lg:text-left">
-                  <div className="w-24 h-24 rounded-full bg-gradient-navy-gold flex items-center justify-center text-white mx-auto lg:mx-0 border-2 border-gold shadow-md">
-                    <span className="text-3xl font-serif font-bold">
-                      {leader.name.split(" ").map(n => n[0]).join("")}
-                    </span>
-                  </div>
+                  {leader.image ? (
+                    <div className="relative w-28 h-28 mx-auto lg:mx-0 rounded-full overflow-hidden border-2 border-gold/45 shadow-md">
+                      <img src={leader.image} alt={leader.name} className="w-full h-full object-cover object-top" />
+                    </div>
+                  ) : null}
                   <div className="space-y-1">
                     <h2 className="text-2xl font-serif font-bold text-navy">{leader.name}</h2>
                     <p className="text-xs font-bold text-gold uppercase tracking-wider">{leader.title}</p>

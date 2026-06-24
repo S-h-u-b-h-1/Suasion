@@ -614,54 +614,57 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
             
             {/* Ashok Kataruka */}
-            <div className="bg-white p-6 rounded-lg border border-gold/15 text-center space-y-4">
-              <div className="w-20 h-20 rounded-full bg-navy/10 flex items-center justify-center text-navy mx-auto border border-gold/30">
-                <span className="text-2xl font-serif font-bold">AK</span>
-              </div>
-              <div>
-                <h3 className="font-serif font-bold text-lg text-navy">Ashok Kataruka</h3>
-                <p className="text-xs text-gold uppercase tracking-wider font-semibold mt-1">
-                  Senior Leader & Chartered Accountant
+            <div className="bg-white p-6 rounded-lg border border-gold/15 text-center space-y-4 flex flex-col justify-between h-full">
+              <div className="space-y-4">
+                <div className="relative w-24 h-24 mx-auto rounded-full overflow-hidden border-2 border-gold/45 shadow">
+                  <img src="/ashok_kataruka.jpg" alt="Ashok Kataruka" className="w-full h-full object-cover object-top" />
+                </div>
+                <div>
+                  <h3 className="font-serif font-bold text-lg text-navy">Ashok Kataruka</h3>
+                  <p className="text-xs text-gold uppercase tracking-wider font-semibold mt-1">
+                    Senior Leader & Chartered Accountant
+                  </p>
+                </div>
+                <p className="text-xs text-charcoal/70 leading-relaxed">
+                  Expertise in finance, corporate taxation, and complex financial structuring for Suasion Finvest.
                 </p>
               </div>
-              <p className="text-xs text-charcoal/70 leading-relaxed">
-                Expertise in finance, corporate taxation, and complex financial structuring for Suasion Finvest.
-              </p>
             </div>
 
             {/* Sumaan Shree Kataruka */}
-            <div className="bg-white p-6 rounded-lg border border-gold/15 text-center space-y-4">
-              <div className="w-20 h-20 rounded-full bg-navy/10 flex items-center justify-center text-navy mx-auto border border-gold/30">
-                <span className="text-2xl font-serif font-bold">SK</span>
-              </div>
-              <div>
-                <h3 className="font-serif font-bold text-lg text-navy">Sumaan Shree Kataruka</h3>
-                <p className="text-xs text-gold uppercase tracking-wider font-semibold mt-1">
-                  Director
+            <div className="bg-white p-6 rounded-lg border border-gold/15 text-center space-y-4 flex flex-col justify-between h-full">
+              <div className="space-y-4">
+                <div className="relative w-24 h-24 mx-auto rounded-full overflow-hidden border-2 border-gold/45 shadow">
+                  <img src="/sumaan_kataruka.jpg" alt="Sumaan Shree Kataruka" className="w-full h-full object-cover object-top" />
+                </div>
+                <div>
+                  <h3 className="font-serif font-bold text-lg text-navy">Sumaan Shree Kataruka</h3>
+                  <p className="text-xs text-gold uppercase tracking-wider font-semibold mt-1">
+                    Director
+                  </p>
+                </div>
+                <p className="text-xs text-charcoal/70 leading-relaxed">
+                  Central leadership overseeing life insurance protection, estate planning, and commercial property investments.
                 </p>
               </div>
-              <p className="text-xs text-charcoal/70 leading-relaxed">
-                Central leadership overseeing life insurance protection, estate planning, and commercial property investments.
-              </p>
             </div>
 
             {/* Shubhaang Kataruka */}
-            <div className="bg-white p-6 rounded-lg border border-gold/15 text-center space-y-4">
-              <div className="w-20 h-20 rounded-full bg-navy/10 flex items-center justify-center text-navy mx-auto border border-gold/30">
-                <span className="text-2xl font-serif font-bold">SK</span>
-              </div>
-              <div>
-                <h3 className="font-serif font-bold text-lg text-navy">Shubhaang Kataruka</h3>
-                <p className="text-xs text-gold uppercase tracking-wider font-semibold mt-1">
-                  Next-Gen Leadership
+            <div className="bg-white p-6 rounded-lg border border-gold/15 text-center space-y-4 flex flex-col justify-center h-full">
+              <div className="space-y-4">
+                <div>
+                  <h3 className="font-serif font-bold text-lg text-navy">Shubhaang Kataruka</h3>
+                  <p className="text-xs text-gold uppercase tracking-wider font-semibold mt-1">
+                    Next-Gen Leadership
+                  </p>
+                </div>
+                <p className="text-xs text-charcoal/70 leading-relaxed">
+                  Driving technology, digital asset allocation tools, and mutual fund client experience.
                 </p>
               </div>
-              <p className="text-xs text-charcoal/70 leading-relaxed">
-                Driving technology, digital asset allocation tools, and mutual fund client experience.
-              </p>
             </div>
 
           </div>

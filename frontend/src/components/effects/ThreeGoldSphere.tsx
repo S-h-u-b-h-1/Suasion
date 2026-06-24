@@ -14,15 +14,15 @@ export default function ThreeGoldSphere() {
     
     const width = containerRef.current.clientWidth;
     const height = containerRef.current.clientHeight;
-    const camera = new THREE.PerspectiveCamera(55, width / height, 0.1, 100);
-    camera.position.z = 4.8;
+    const camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 100);
+    camera.position.z = 4.5;
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(width, height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     containerRef.current.appendChild(renderer.domElement);
 
-    // Create a circular particle glow texture programmatically (ensures no asset loading bottlenecks)
+    // Create a circular particle glow texture programmatically
     const createParticleTexture = () => {
       const canvas = document.createElement("canvas");
       canvas.width = 64;
@@ -42,192 +42,77 @@ export default function ThreeGoldSphere() {
 
     const particleTexture = createParticleTexture();
 
-    // 1. Math profile for the money bag radius r at height y
-    const getBagRadius = (y: number) => {
-      let r = 0;
-      if (y < -1.0) {
-        // Flat/rounded bottom base
-        const t = (y + 1.5) / 0.5; // 0 to 1
-        r = Math.sin(t * Math.PI / 2) * 1.35;
-      } else if (y < 0.6) {
-        // Bulbous body
-        const t = (y + 1.0) / 1.6; // 0 to 1
-        r = 1.35 - 0.75 * Math.pow(t, 2);
-      } else if (y < 0.85) {
-        // Cinched neck
-        const t = (y - 0.6) / 0.25; // 0 to 1
-        r = 0.6 - 0.15 * Math.sin(t * Math.PI);
-      } else {
-        // Flared top opening
-        const t = (y - 0.85) / 0.65; // 0 to 1
-        r = 0.6 + 0.65 * Math.pow(t, 1.5);
-      }
-      return r;
-    };
+    // Generate particles for a perfect 3D Sphere (Wealth Nexus Globe)
+    const particleCount = 1000;
+    const geometry = new THREE.BufferGeometry();
+    const positions = new Float32Array(particleCount * 3);
+    const initialPositions = new Float32Array(particleCount * 3);
+    const radius = 1.5;
 
-    // 2. Generate particles for the Money Bag Body (Bronze-Gold)
-    const bodyCount = 1400;
-    const bodyGeometry = new THREE.BufferGeometry();
-    const bodyPositions = new Float32Array(bodyCount * 3);
-    const bodyInitial = new Float32Array(bodyCount * 3);
+    for (let i = 0; i < particleCount; i++) {
+      // Uniform distribution on sphere
+      const u = Math.random();
+      const v = Math.random();
+      const theta = u * 2.0 * Math.PI;
+      const phi = Math.acos(2.0 * v - 1.0);
 
-    for (let i = 0; i < bodyCount; i++) {
-      // Distribute height y from -1.5 to 1.5
-      const y = (i / bodyCount) * 3.0 - 1.5;
-      const phi = Math.random() * Math.PI * 2;
-      const baseR = getBagRadius(y);
-      // Add vertical ruffles / folds
-      const r = baseR * (1.0 + Math.sin(phi * 10) * 0.05);
+      const x = radius * Math.sin(phi) * Math.cos(theta);
+      const y = radius * Math.sin(phi) * Math.sin(theta);
+      const z = radius * Math.cos(phi);
 
-      const x = r * Math.sin(phi);
-      const z = r * Math.cos(phi);
+      positions[i * 3] = x;
+      positions[i * 3 + 1] = y;
+      positions[i * 3 + 2] = z;
 
-      bodyPositions[i * 3] = x;
-      bodyPositions[i * 3 + 1] = y;
-      bodyPositions[i * 3 + 2] = z;
-
-      bodyInitial[i * 3] = x;
-      bodyInitial[i * 3 + 1] = y;
-      bodyInitial[i * 3 + 2] = z;
+      initialPositions[i * 3] = x;
+      initialPositions[i * 3 + 1] = y;
+      initialPositions[i * 3 + 2] = z;
     }
-    bodyGeometry.setAttribute("position", new THREE.BufferAttribute(bodyPositions, 3));
+    geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
 
-    // 3. Generate particles for the Cinch Rope / Tie (Bright Yellow-Gold)
-    const tieCount = 200;
-    const tieGeometry = new THREE.BufferGeometry();
-    const tiePositions = new Float32Array(tieCount * 3);
-    const tieInitial = new Float32Array(tieCount * 3);
-
-    for (let i = 0; i < tieCount; i++) {
-      const phi = (i / tieCount) * Math.PI * 2;
-      // Cinch height at 0.65
-      const y = 0.65 + (Math.random() - 0.5) * 0.04;
-      const baseR = getBagRadius(0.65);
-      // Tie loops slightly wider than the neck cinch
-      const r = baseR * (1.06 + Math.sin(phi * 24) * 0.02);
-
-      const x = r * Math.sin(phi);
-      const z = r * Math.cos(phi);
-
-      tiePositions[i * 3] = x;
-      tiePositions[i * 3 + 1] = y;
-      tiePositions[i * 3 + 2] = z;
-
-      tieInitial[i * 3] = x;
-      tieInitial[i * 3 + 1] = y;
-      tieInitial[i * 3 + 2] = z;
-    }
-    tieGeometry.setAttribute("position", new THREE.BufferAttribute(tiePositions, 3));
-
-    // 4. Generate particles for the Dollar Sign '$' (Champagne Gold)
-    const dollarCount = 300;
-    const dollarGeometry = new THREE.BufferGeometry();
-    const dollarPositions = new Float32Array(dollarCount * 3);
-    const dollarInitial = new Float32Array(dollarCount * 3);
-
-    // Generate 2D dollar shape coordinates first
-    const rawDollarPoints: { x: number; y: number }[] = [];
-    const sCount = 200;
-    for (let i = 0; i < sCount; i++) {
-      const t = (i / sCount) * Math.PI * 2.4 - Math.PI * 1.2;
-      const sx = Math.sin(t) * 0.38;
-      const sy = t * 0.18 - 0.2; // Centered on the bulbous body (from -0.4 to 0.0)
-      rawDollarPoints.push({ x: sx, y: sy });
-    }
-    const lCount = 60;
-    for (let i = 0; i < lCount; i++) {
-      const t = (i / lCount) * 1.1 - 0.75;
-      rawDollarPoints.push({ x: -0.04, y: t });
-      rawDollarPoints.push({ x: 0.04, y: t });
-    }
-
-    // Cylindrical projection onto the front surface of the bag
-    for (let i = 0; i < dollarCount; i++) {
-      const pt = rawDollarPoints[i % rawDollarPoints.length];
-      const y = pt.y;
-      const R = getBagRadius(y);
-      const theta = pt.x / (R || 1); // wrap angle
-      
-      const x = R * Math.sin(theta);
-      const z = R * Math.cos(theta) + 0.04; // Slightly offset forward
-
-      dollarPositions[i * 3] = x;
-      dollarPositions[i * 3 + 1] = y;
-      dollarPositions[i * 3 + 2] = z;
-
-      dollarInitial[i * 3] = x;
-      dollarInitial[i * 3 + 1] = y;
-      dollarInitial[i * 3 + 2] = z;
-    }
-    dollarGeometry.setAttribute("position", new THREE.BufferAttribute(dollarPositions, 3));
-
-    // 5. Materials configurations
-    const bodyMaterial = new THREE.PointsMaterial({
-      color: 0xB58A2B, // Dark Gold / Bronze
-      size: 0.11,
+    // Materials configurations
+    const particleMaterial = new THREE.PointsMaterial({
+      color: 0xE5C158, // Glowing Warm Gold
+      size: 0.13,
       map: particleTexture,
       transparent: true,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
-      opacity: 0.8,
+      opacity: 0.85,
     });
 
-    const tieMaterial = new THREE.PointsMaterial({
-      color: 0xFFF066, // Bright Yellow-Gold
-      size: 0.16,
-      map: particleTexture,
-      transparent: true,
-      blending: THREE.AdditiveBlending,
-      depthWrite: false,
-      opacity: 0.95,
-    });
-
-    const dollarMaterial = new THREE.PointsMaterial({
-      color: 0xFFE885, // Glowing Champagne Gold
-      size: 0.14,
-      map: particleTexture,
-      transparent: true,
-      blending: THREE.AdditiveBlending,
-      depthWrite: false,
-      opacity: 0.95,
-    });
-
-    const bodyPoints = new THREE.Points(bodyGeometry, bodyMaterial);
-    const tiePoints = new THREE.Points(tieGeometry, tieMaterial);
-    const dollarPoints = new THREE.Points(dollarGeometry, dollarMaterial);
+    const points = new THREE.Points(geometry, particleMaterial);
 
     const group = new THREE.Group();
-    group.add(bodyPoints);
-    group.add(tiePoints);
-    group.add(dollarPoints);
+    group.add(points);
     scene.add(group);
 
-    // 6. Connecting lines / network web (only connect nearest surface points)
+    // Neural connections / line network web
     const lineMaterial = new THREE.LineBasicMaterial({
       color: 0xD4AF37,
       transparent: true,
-      opacity: 0.1,
+      opacity: 0.15,
       blending: THREE.AdditiveBlending,
     });
     
     const lineGeometry = new THREE.BufferGeometry();
-    const maxConnections = 450;
+    const maxConnections = 350;
     const linePositions = new Float32Array(maxConnections * 2 * 3);
     const lineInitial = new Float32Array(maxConnections * 2 * 3);
     let lineIdx = 0;
 
-    for (let i = 0; i < bodyCount && lineIdx < maxConnections; i += 4) {
-      const x1 = bodyInitial[i * 3];
-      const y1 = bodyInitial[i * 3 + 1];
-      const z1 = bodyInitial[i * 3 + 2];
+    for (let i = 0; i < particleCount && lineIdx < maxConnections; i += 3) {
+      const x1 = initialPositions[i * 3];
+      const y1 = initialPositions[i * 3 + 1];
+      const z1 = initialPositions[i * 3 + 2];
 
-      for (let j = i + 1; j < bodyCount && lineIdx < maxConnections; j += 10) {
-        const x2 = bodyInitial[j * 3];
-        const y2 = bodyInitial[j * 3 + 1];
-        const z2 = bodyInitial[j * 3 + 2];
+      for (let j = i + 1; j < particleCount && lineIdx < maxConnections; j += 8) {
+        const x2 = initialPositions[j * 3];
+        const y2 = initialPositions[j * 3 + 1];
+        const z2 = initialPositions[j * 3 + 2];
 
         const dist = Math.hypot(x1 - x2, y1 - y2, z1 - z2);
-        if (dist < 0.38) { // fine density connection
+        if (dist < 0.65) { // Connection threshold
           linePositions[lineIdx * 6] = x1;
           linePositions[lineIdx * 6 + 1] = y1;
           linePositions[lineIdx * 6 + 2] = z1;
@@ -258,8 +143,8 @@ export default function ThreeGoldSphere() {
       const mouseX = ((event.clientX - rect.left) / rect.width) * 2 - 1;
       const mouseY = -((event.clientY - rect.top) / rect.height) * 2 + 1;
 
-      mouse.targetX = mouseX * 1.4;
-      mouse.targetY = mouseY * 1.4;
+      mouse.targetX = mouseX * 1.5;
+      mouse.targetY = mouseY * 1.5;
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -295,19 +180,19 @@ export default function ThreeGoldSphere() {
       mouse.y += (mouse.targetY - mouse.y) * 0.05;
 
       // Group auto-rotation
-      const rotY = elapsedTime * 0.22;
-      const rotX = Math.sin(elapsedTime * 0.4) * 0.1;
+      const rotY = elapsedTime * 0.18;
+      const rotX = Math.sin(elapsedTime * 0.3) * 0.08;
 
-      // Local cursor coordinates calculation (inverse rotation of target cursor in world space)
+      // Local cursor coordinates calculation
       const cosRY = Math.cos(-rotY);
       const sinRY = Math.sin(-rotY);
       const cosRX = Math.cos(-rotX);
       const sinRX = Math.sin(-rotX);
 
       // Mouse target coords in world-space (projected)
-      const targetX = mouse.x * 2.0;
-      const targetY = mouse.y * 2.0;
-      const targetZ = 0.5;
+      const targetX = mouse.x * 1.8;
+      const targetY = mouse.y * 1.8;
+      const targetZ = 0.6;
 
       // Inverse rotate mouse target into local-space
       const ty1 = targetY * cosRX - targetZ * sinRX;
@@ -335,8 +220,8 @@ export default function ThreeGoldSphere() {
           let ox = 0, oy = 0, oz = 0;
 
           // Push particles slightly when cursor gets too close
-          if (dist < 1.3) {
-            const force = ((1.3 - dist) / 1.3) * 0.22;
+          if (dist < 1.1) {
+            const force = ((1.1 - dist) / 1.1) * 0.25;
             ox = (dx / dist) * force;
             oy = (dy / dist) * force;
             oz = (dz / dist) * force;
@@ -349,17 +234,9 @@ export default function ThreeGoldSphere() {
       };
 
       // 1. Update displacements in local coordinates
-      const bodyArr = bodyGeometry.attributes.position.array as Float32Array;
-      updateDisplacement(bodyArr, bodyInitial, bodyCount);
-      bodyGeometry.attributes.position.needsUpdate = true;
-
-      const tieArr = tieGeometry.attributes.position.array as Float32Array;
-      updateDisplacement(tieArr, tieInitial, tieCount);
-      tieGeometry.attributes.position.needsUpdate = true;
-
-      const dollarArr = dollarGeometry.attributes.position.array as Float32Array;
-      updateDisplacement(dollarArr, dollarInitial, dollarCount);
-      dollarGeometry.attributes.position.needsUpdate = true;
+      const pointsArr = geometry.attributes.position.array as Float32Array;
+      updateDisplacement(pointsArr, initialPositions, particleCount);
+      geometry.attributes.position.needsUpdate = true;
 
       // 2. Line displacements
       const lineArr = lineGeometry.attributes.position.array as Float32Array;
@@ -375,8 +252,8 @@ export default function ThreeGoldSphere() {
         const dist = Math.hypot(dx, dy, dz);
         let ox = 0, oy = 0, oz = 0;
 
-        if (dist < 1.3) {
-          const force = ((1.3 - dist) / 1.3) * 0.22;
+        if (dist < 1.1) {
+          const force = ((1.1 - dist) / 1.1) * 0.25;
           ox = (dx / dist) * force;
           oy = (dy / dist) * force;
           oz = (dz / dist) * force;
@@ -406,13 +283,9 @@ export default function ThreeGoldSphere() {
       resizeObserver.disconnect();
       cancelAnimationFrame(animationFrameId);
 
-      bodyGeometry.dispose();
-      tieGeometry.dispose();
-      dollarGeometry.dispose();
+      geometry.dispose();
       lineGeometry.dispose();
-      bodyMaterial.dispose();
-      tieMaterial.dispose();
-      dollarMaterial.dispose();
+      particleMaterial.dispose();
       lineMaterial.dispose();
       particleTexture.dispose();
       renderer.dispose();
