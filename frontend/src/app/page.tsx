@@ -19,7 +19,7 @@ import {
   Layers
 } from "lucide-react";
 
-const ThreeRevolvingLogo = dynamic(() => import("../components/effects/ThreeRevolvingLogo"), { ssr: false });
+// No revolving logo import needed
 const ThreeGoldParticles = dynamic(() => import("../components/effects/ThreeGoldParticles"), { ssr: false });
 
 // FAQ Data
@@ -101,8 +101,12 @@ export default function Home() {
             </div>
 
             <div className="lg:col-span-5 relative flex justify-center lg:justify-end items-center w-full">
-              <div className="w-full max-w-[480px] aspect-square relative flex items-center justify-center">
-                <ThreeRevolvingLogo />
+              <div className="w-full max-w-[450px] aspect-square relative flex items-center justify-center p-4">
+                <img
+                  src="/logo.png"
+                  alt="Suasion Group Logo"
+                  className="w-full h-auto object-contain drop-shadow-[0_10px_25px_rgba(212,175,55,0.08)]"
+                />
               </div>
             </div>
 
