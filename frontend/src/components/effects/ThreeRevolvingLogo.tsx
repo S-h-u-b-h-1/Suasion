@@ -50,64 +50,18 @@ export default function ThreeRevolvingLogo() {
     const logoTexture = textureLoader.load("/logo.png");
     logoTexture.colorSpace = THREE.SRGBColorSpace; // Standard color space for Next.js
 
-    // 1. The Glass Plaque Mesh
+    // 1. The Backdrop Plaque Mesh
     // Aspect ratio of logo is 1.5 (1024 x 682). So plaque width=3.3, height=2.2, depth=0.08
     const plaqueGeometry = new THREE.BoxGeometry(3.3, 2.2, 0.08);
-    const plaqueMaterial = new THREE.MeshPhysicalMaterial({
-      color: 0xffffff,
-      transparent: true,
-      opacity: 0.22,
-      roughness: 0.1,
-      metalness: 0.15,
-      transmission: 0.9, // high glass transmission
-      ior: 1.5,
-      thickness: 0.25,
-      depthWrite: false,
+    // Use MeshBasicMaterial with the exact ivory background color of the website.
+    // This makes the plaque completely invisible against the background, while still
+    // blocking the view of the back side decals as it revolves.
+    const plaqueMaterial = new THREE.MeshBasicMaterial({
+      color: 0xF8F5EF, // Website background color (ivory)
+      depthWrite: true,
     });
     const plaqueMesh = new THREE.Mesh(plaqueGeometry, plaqueMaterial);
     logoGroup.add(plaqueMesh);
-
-    // 2. Metallic Gold Border Bars
-    const goldMaterial = new THREE.MeshStandardMaterial({
-      color: 0xD4AF37, // Gold
-      metalness: 0.95,
-      roughness: 0.18,
-    });
-
-    const borderThickness = 0.05;
-    const borderDepth = 0.1;
-
-    // Top border bar
-    const topBorder = new THREE.Mesh(
-      new THREE.BoxGeometry(3.36, borderThickness, borderDepth),
-      goldMaterial
-    );
-    topBorder.position.y = 1.1 + borderThickness / 2;
-    logoGroup.add(topBorder);
-
-    // Bottom border bar
-    const bottomBorder = new THREE.Mesh(
-      new THREE.BoxGeometry(3.36, borderThickness, borderDepth),
-      goldMaterial
-    );
-    bottomBorder.position.y = -1.1 - borderThickness / 2;
-    logoGroup.add(bottomBorder);
-
-    // Left border bar
-    const leftBorder = new THREE.Mesh(
-      new THREE.BoxGeometry(borderThickness, 2.2, borderDepth),
-      goldMaterial
-    );
-    leftBorder.position.x = -1.65 - borderThickness / 2;
-    logoGroup.add(leftBorder);
-
-    // Right border bar
-    const rightBorder = new THREE.Mesh(
-      new THREE.BoxGeometry(borderThickness, 2.2, borderDepth),
-      goldMaterial
-    );
-    rightBorder.position.x = 1.65 + borderThickness / 2;
-    logoGroup.add(rightBorder);
 
     // 3. Logo Decals (Front and Back)
     // Scale logo slightly smaller than the plate boundaries
@@ -259,7 +213,6 @@ export default function ThreeRevolvingLogo() {
       
       plaqueGeometry.dispose();
       plaqueMaterial.dispose();
-      goldMaterial.dispose();
       logoGeometry.dispose();
       logoFrontMaterial.dispose();
       logoTexture.dispose();
