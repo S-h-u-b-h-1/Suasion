@@ -108,9 +108,7 @@ export default function Home() {
                 <div className="relative z-10 flex flex-col justify-between h-full pointer-events-none">
                   {/* Top metadata */}
                   <div className="flex justify-between items-start">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-navy-gold flex items-center justify-center border border-gold/40 shadow-lg">
-                      <span className="text-gold font-serif font-bold text-xl">S</span>
-                    </div>
+                    <img src="/logo.png" alt="Suasion Group Logo" className="h-9 w-auto object-contain" />
                     <span className="text-[9px] uppercase font-bold tracking-widest text-gold bg-navy/80 px-2.5 py-1 rounded border border-gold/20 backdrop-blur-sm">
                       Interactive 3D
                     </span>

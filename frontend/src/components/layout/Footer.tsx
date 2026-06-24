@@ -53,18 +53,12 @@ export default function Footer() {
           
           {/* Brand Info */}
           <div className="space-y-6">
-            <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center border border-gold/40 shadow">
-                <span className="text-gold font-serif font-bold text-xl">S</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-white font-serif font-bold text-lg tracking-wider leading-none">
-                  SUASION
-                </span>
-                <span className="text-[10px] text-gold tracking-widest leading-none mt-1">
-                  GROUP
-                </span>
-              </div>
+            <Link href="/" className="flex items-center group">
+              <img
+                src="/logo.png"
+                alt="Suasion Group Logo"
+                className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              />
             </Link>
             <p className="text-sm leading-relaxed text-white/70">
               Kolkata-based integrated financial services house. Helping families, professionals, and businesses borrow, protect, invest, and grow wealth across generations.

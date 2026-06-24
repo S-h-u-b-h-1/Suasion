@@ -50,18 +50,12 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-10 h-10 rounded-lg bg-navy flex items-center justify-center border border-gold/40 shadow-md group-hover:border-gold transition-colors duration-300">
-                <span className="text-gold font-serif font-bold text-xl">S</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-navy font-serif font-bold text-lg tracking-wider leading-none group-hover:text-gold transition-colors duration-300">
-                  SUASION
-                </span>
-                <span className="text-[10px] text-charcoal/70 tracking-widest leading-none mt-1">
-                  GROUP
-                </span>
-              </div>
+            <Link href="/" className="flex items-center group">
+              <img
+                src="/logo.png"
+                alt="Suasion Group Logo"
+                className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              />
             </Link>
           </div>
 
