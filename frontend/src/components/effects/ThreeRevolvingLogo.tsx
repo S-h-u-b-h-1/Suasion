@@ -51,8 +51,8 @@ export default function ThreeRevolvingLogo() {
     logoTexture.colorSpace = THREE.SRGBColorSpace; // Standard color space for Next.js
 
     // 1. The Glass Plaque Mesh
-    // Aspect ratio of logo is 1.5 (1024 x 682). So plaque width=3.3, height=2.2, depth=0.08
-    const plaqueGeometry = new THREE.BoxGeometry(3.3, 2.2, 0.08);
+    // The new emblem is 1024x1024 (aspect ratio 1.0). So plaque is square: 2.3 x 2.3
+    const plaqueGeometry = new THREE.BoxGeometry(2.3, 2.3, 0.08);
     const plaqueMaterial = new THREE.MeshPhysicalMaterial({
       color: 0xffffff,
       transparent: true,
@@ -79,39 +79,39 @@ export default function ThreeRevolvingLogo() {
 
     // Top border bar
     const topBorder = new THREE.Mesh(
-      new THREE.BoxGeometry(3.36, borderThickness, borderDepth),
+      new THREE.BoxGeometry(2.36, borderThickness, borderDepth),
       goldMaterial
     );
-    topBorder.position.y = 1.1 + borderThickness / 2;
+    topBorder.position.y = 1.15 + borderThickness / 2;
     logoGroup.add(topBorder);
 
     // Bottom border bar
     const bottomBorder = new THREE.Mesh(
-      new THREE.BoxGeometry(3.36, borderThickness, borderDepth),
+      new THREE.BoxGeometry(2.36, borderThickness, borderDepth),
       goldMaterial
     );
-    bottomBorder.position.y = -1.1 - borderThickness / 2;
+    bottomBorder.position.y = -1.15 - borderThickness / 2;
     logoGroup.add(bottomBorder);
 
     // Left border bar
     const leftBorder = new THREE.Mesh(
-      new THREE.BoxGeometry(borderThickness, 2.2, borderDepth),
+      new THREE.BoxGeometry(borderThickness, 2.3, borderDepth),
       goldMaterial
     );
-    leftBorder.position.x = -1.65 - borderThickness / 2;
+    leftBorder.position.x = -1.15 - borderThickness / 2;
     logoGroup.add(leftBorder);
 
     // Right border bar
     const rightBorder = new THREE.Mesh(
-      new THREE.BoxGeometry(borderThickness, 2.2, borderDepth),
+      new THREE.BoxGeometry(borderThickness, 2.3, borderDepth),
       goldMaterial
     );
-    rightBorder.position.x = 1.65 + borderThickness / 2;
+    rightBorder.position.x = 1.15 + borderThickness / 2;
     logoGroup.add(rightBorder);
 
     // 3. Logo Decals (Front and Back)
     // Scale logo slightly smaller than the plate boundaries
-    const logoGeometry = new THREE.PlaneGeometry(3.05, 2.03);
+    const logoGeometry = new THREE.PlaneGeometry(2.05, 2.05);
     const logoFrontMaterial = new THREE.MeshStandardMaterial({
       map: logoTexture,
       transparent: true,
