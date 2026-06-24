@@ -575,7 +575,7 @@ export default function Home() {
 
         <div className="text-center pt-4">
           <Link
-            href="/journey"
+            href="/about#timeline"
             className="inline-flex items-center justify-center px-6 py-2.5 text-xs font-semibold uppercase tracking-wider bg-navy text-white hover:bg-gold hover:text-navy rounded border border-navy hover:border-gold transition-all duration-300"
           >
             View Complete Timeline

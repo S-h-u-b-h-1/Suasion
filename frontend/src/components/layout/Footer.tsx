@@ -129,7 +129,7 @@ export default function Footer() {
                 <Link href="/leadership" className="hover:text-gold transition-colors">Leadership Team</Link>
               </li>
               <li>
-                <Link href="/journey" className="hover:text-gold transition-colors">Our Journey Timeline</Link>
+                <Link href="/about#timeline" className="hover:text-gold transition-colors">Our Journey Timeline</Link>
               </li>
               <li>
                 <Link href="/resources" className="hover:text-gold transition-colors">Resources & Insights</Link>
