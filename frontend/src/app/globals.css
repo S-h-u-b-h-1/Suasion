@@ -44,6 +44,26 @@
   border-color: rgba(212, 175, 55, 0.4);
 }
 
+/* Dark Glassmorphism for Obsidian/Dark sections */
+.glass-panel-dark {
+  background: rgba(3, 12, 30, 0.55); /* Translucent deep obsidian */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.15); /* Delicate gold border */
+  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+.glass-panel-dark-hover {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-dark-hover:hover {
+  transform: translateY(-6px);
+  background: rgba(8, 42, 107, 0.25); /* Deep translucent navy on hover */
+  border-color: rgba(212, 175, 55, 0.45); /* Gold border gets brighter */
+  box-shadow: 0 20px 50px 0 rgba(212, 175, 55, 0.18), inset 0 0 15px rgba(212, 175, 55, 0.05);
+}
+
 /* Premium Gradients */
 .bg-gradient-navy-gold {
   background: linear-gradient(135deg, #082A6B 0%, #051A44 70%, #082A6B 100%);

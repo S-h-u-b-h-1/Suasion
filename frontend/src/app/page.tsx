@@ -100,9 +100,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Hero Right Visual (Luxury 3D Interactive Canvas) */}
             <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
-              <div className="w-full max-w-[420px] aspect-[4/5] rounded-2xl glass-panel relative p-8 flex flex-col justify-between border-gold/30 shadow-2xl relative overflow-hidden bg-navy/20">
+              <div className="w-full max-w-[420px] aspect-[4/5] rounded-2xl glass-panel-dark relative p-8 flex flex-col justify-between shadow-2xl relative overflow-hidden">
                 <div className="absolute inset-0 z-0">
                   <ThreeGoldSphere />
                 </div>
@@ -204,7 +203,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             
             {/* Card 1: Suasion Finvest */}
-            <div className="glass-panel glass-panel-hover p-8 rounded-xl flex flex-col justify-between h-full bg-white/5 border-gold/15">
+            <div className="glass-panel-dark glass-panel-dark-hover p-8 rounded-xl flex flex-col justify-between h-full">
               <div className="space-y-6">
                 <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center border border-gold/30 text-gold shadow-sm">
                   <Building2 className="h-6 w-6" />
@@ -238,7 +237,7 @@ export default function Home() {
               <div className="pt-8">
                 <Link 
                   href="/services#nbfc"
-                  className="w-full inline-flex items-center justify-center py-2.5 rounded text-xs font-bold uppercase tracking-wider bg-gold text-navy hover:bg-white hover:text-navy transition-all duration-300 font-bold"
+                  className="w-full inline-flex items-center justify-center py-2.5 rounded text-xs font-bold uppercase tracking-wider bg-transparent border border-gold/50 text-gold hover:bg-gold hover:text-navy hover:shadow-[0_0_12px_rgba(212,175,55,0.3)] transition-all duration-300 font-bold"
                 >
                   Explore Lending
                 </Link>
@@ -246,7 +245,7 @@ export default function Home() {
             </div>
 
             {/* Card 2: Suasion Services */}
-            <div className="glass-panel glass-panel-hover p-8 rounded-xl flex flex-col justify-between h-full bg-white/5 border-gold/15">
+            <div className="glass-panel-dark glass-panel-dark-hover p-8 rounded-xl flex flex-col justify-between h-full">
               <div className="space-y-6">
                 <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center border border-gold/30 text-gold shadow-sm">
                   <ShieldCheck className="h-6 w-6" />
@@ -280,7 +279,7 @@ export default function Home() {
               <div className="pt-8">
                 <Link 
                   href="/services#insurance"
-                  className="w-full inline-flex items-center justify-center py-2.5 rounded text-xs font-bold uppercase tracking-wider bg-gold text-navy hover:bg-white hover:text-navy transition-all duration-300 font-bold"
+                  className="w-full inline-flex items-center justify-center py-2.5 rounded text-xs font-bold uppercase tracking-wider bg-transparent border border-gold/50 text-gold hover:bg-gold hover:text-navy hover:shadow-[0_0_12px_rgba(212,175,55,0.3)] transition-all duration-300 font-bold"
                 >
                   Explore Protection
                 </Link>
@@ -288,7 +287,7 @@ export default function Home() {
             </div>
 
             {/* Card 3: Suasion Infrastructure */}
-            <div className="glass-panel glass-panel-hover p-8 rounded-xl flex flex-col justify-between h-full bg-white/5 border-gold/15">
+            <div className="glass-panel-dark glass-panel-dark-hover p-8 rounded-xl flex flex-col justify-between h-full">
               <div className="space-y-6">
                 <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center border border-gold/30 text-gold shadow-sm">
                   <Building2 className="h-6 w-6" />
@@ -322,7 +321,7 @@ export default function Home() {
               <div className="pt-8">
                 <Link 
                   href="/services#property"
-                  className="w-full inline-flex items-center justify-center py-2.5 rounded text-xs font-bold uppercase tracking-wider bg-gold text-navy hover:bg-white hover:text-navy transition-all duration-300 font-bold"
+                  className="w-full inline-flex items-center justify-center py-2.5 rounded text-xs font-bold uppercase tracking-wider bg-transparent border border-gold/50 text-gold hover:bg-gold hover:text-navy hover:shadow-[0_0_12px_rgba(212,175,55,0.3)] transition-all duration-300 font-bold"
                 >
                   Explore Property
                 </Link>
@@ -330,7 +329,7 @@ export default function Home() {
             </div>
 
             {/* Card 4: Suasion Securities */}
-            <div className="glass-panel glass-panel-hover p-8 rounded-xl flex flex-col justify-between h-full bg-white/5 border-gold/15">
+            <div className="glass-panel-dark glass-panel-dark-hover p-8 rounded-xl flex flex-col justify-between h-full">
               <div className="space-y-6">
                 <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center border border-gold/30 text-gold shadow-sm">
                   <TrendingUp className="h-6 w-6" />
@@ -364,7 +363,7 @@ export default function Home() {
               <div className="pt-8">
                 <Link 
                   href="/services#securities"
-                  className="w-full inline-flex items-center justify-center py-2.5 rounded text-xs font-bold uppercase tracking-wider bg-gold text-navy hover:bg-white hover:text-navy transition-all duration-300 font-bold"
+                  className="w-full inline-flex items-center justify-center py-2.5 rounded text-xs font-bold uppercase tracking-wider bg-transparent border border-gold/50 text-gold hover:bg-gold hover:text-navy hover:shadow-[0_0_12px_rgba(212,175,55,0.3)] transition-all duration-300 font-bold"
                 >
                   Explore Wealth
                 </Link>
