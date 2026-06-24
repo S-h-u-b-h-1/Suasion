@@ -69,7 +69,7 @@ export default function Home() {
                 "url": "https://www.suasion.in",
                 "logo": "https://www.suasion.in/logo.png",
                 "image": "https://www.suasion.in/logo.png",
-                "description": "Suasion Group is a Kolkata-based multi-generational financial services house operating across NBFC lending, insurance distribution, property investments, and mutual fund distribution.",
+                "description": "Suasion Group Kolkata is a trusted financial services house operating Suasion Finvest (NBFC), Suasion Services (Insurance), Suasion Infrastructure (Property), and Suasion Securities. Led by CA Ashok Kataruka, Sumaan Shree Kataruka, and Shubhaang Kataruka.",
                 "telephone": "+919903040304",
                 "address": {
                   "@type": "PostalAddress",
@@ -86,7 +86,32 @@ export default function Home() {
                 "founder": [
                   {
                     "@type": "Person",
-                    "name": "Ashok Kataruka"
+                    "@id": "https://www.suasion.in/#ashok-kataruka",
+                    "name": "Ashok Kataruka",
+                    "jobTitle": "Founder & Senior Leader (Chartered Accountant)",
+                    "worksFor": {
+                      "@id": "https://www.suasion.in/#organization"
+                    }
+                  }
+                ],
+                "employee": [
+                  {
+                    "@type": "Person",
+                    "@id": "https://www.suasion.in/#ashok-kataruka",
+                    "name": "Ashok Kataruka",
+                    "jobTitle": "Founder & Chartered Accountant"
+                  },
+                  {
+                    "@type": "Person",
+                    "@id": "https://www.suasion.in/#sumaan-kataruka",
+                    "name": "Sumaan Shree Kataruka",
+                    "jobTitle": "Director"
+                  },
+                  {
+                    "@type": "Person",
+                    "@id": "https://www.suasion.in/#shubhaang-kataruka",
+                    "name": "Shubhaang Kataruka",
+                    "jobTitle": "Director & Next-Gen Leader"
                   }
                 ],
                 "foundingDate": "1995-01-05",

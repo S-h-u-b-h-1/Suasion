@@ -12,11 +12,20 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Our Services | Borrow, Protect, Invest & Grow",
-  description: "Explore the comprehensive financial services of Suasion Group, spanning NBFC business loans, life insurance distribution, property investments, and mutual funds.",
+  title: "Financial Services Kolkata | Suasion Finvest, Services, Securities",
+  description: "Comprehensive financial services by Suasion Group Kolkata: NBFC business lending (Suasion Finvest), life insurance (Suasion Services), property advisory (Suasion Infrastructure), and mutual funds (Suasion Securities).",
   alternates: {
     canonical: "/services",
   },
+  keywords: [
+    "Suasion Finvest Private Limited",
+    "Suasion Services Private Limited",
+    "Suasion Infrastructure Private Limited",
+    "Suasion Securities",
+    "NBFC business loans Kolkata",
+    "Mutual funds distributor Kolkata",
+    "Life insurance advisory Kolkata",
+  ],
 };
 
 export default function Services() {

@@ -2,11 +2,18 @@ import Link from "next/link";
 import { Award, Target, Shield, Heart, GraduationCap, Lightbulb, Compass, ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "About Us | Our Legacy & Core Values",
-  description: "Learn about the legacy of Suasion Group, a family-owned Kolkata financial services firm operating since 1995.",
+  title: "About Suasion Group Kolkata | CA Ashok Kataruka Legacy",
+  description: "Discover the 30-year legacy of Suasion Group in Kolkata. Founded in 1995 by veteran Chartered Accountant Ashok Kataruka, we serve families and businesses across West Bengal.",
   alternates: {
     canonical: "/about",
   },
+  keywords: [
+    "About Suasion Group Kolkata",
+    "CA Ashok Kataruka",
+    "Kataruka family Kolkata",
+    "Kolkata financial services legacy",
+    "Suasion Finvest history",
+  ],
 };
 
 const values = [

@@ -2,11 +2,20 @@ import Link from "next/link";
 import { Mail, ShieldCheck, Award, Briefcase, ChevronRight } from "lucide-react";
 
 export const metadata = {
-  title: "Our Leadership | Directors & Advisors",
-  description: "Meet the directors of Suasion Group, combining decades of taxation and structured finance expertise with modern digital asset management strategies.",
+  title: "Directors & Founders | Ashok, Sumaan Shree & Shubhaang Kataruka",
+  description: "Meet the leadership team of Suasion Group Kolkata: Founder Ashok Kataruka (Chartered Accountant), Director Sumaan Shree Kataruka, and Director Shubhaang Kataruka.",
   alternates: {
     canonical: "/leadership",
   },
+  keywords: [
+    "Ashok Kataruka",
+    "Sumaan Shree Kataruka",
+    "Sumaan Kataruka",
+    "Shubhaang Kataruka",
+    "Suasion Group directors",
+    "Kataruka family Kolkata",
+    "Chartered Accountant Ashok Kataruka",
+  ],
 };
 
 const leaders = [

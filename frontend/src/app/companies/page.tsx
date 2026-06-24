@@ -2,11 +2,21 @@ import Link from "next/link";
 import { Building2, ShieldCheck, TrendingUp, Calendar, ArrowRight, ShieldAlert } from "lucide-react";
 
 export const metadata = {
-  title: "Group Companies | Structure & Verticals",
-  description: "View the legal corporate structures of Suasion Group, including Suasion Finvest Private Limited, Suasion Services Private Limited, Suasion Infrastructure Private Limited, and Suasion Securities.",
+  title: "Suasion Group Companies Kolkata | Finvest, Services & Infrastructure",
+  description: "Official legal and corporate structure of Suasion Group Kolkata, including Suasion Finvest Private Limited (NBFC), Suasion Services Private Limited, Suasion Infrastructure Private Limited, and Suasion Securities.",
   alternates: {
     canonical: "/companies",
   },
+  keywords: [
+    "Suasion Finvest Private Limited",
+    "Suasion Services Private Limited",
+    "Suasion Infrastructure Private Limited",
+    "Suasion Securities",
+    "Suasion Finvest Pvt Ltd",
+    "Suasion Services Pvt Ltd",
+    "Suasion Infrastructure Pvt Ltd",
+    "Suasion Group structure",
+  ],
 };
 
 const companies = [
