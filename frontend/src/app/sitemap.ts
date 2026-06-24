@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://suasiongroup.in";
+  const baseUrl = "https://www.suasion.in";
   const routes = [
     "",
     "/about",

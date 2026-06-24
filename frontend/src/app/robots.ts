@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/admin", // Disallow indexing of the administrative dashboard
     },
-    sitemap: "https://suasiongroup.in/sitemap.xml",
+    sitemap: "https://www.suasion.in/sitemap.xml",
   };
 }

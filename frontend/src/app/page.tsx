@@ -55,6 +55,71 @@ export default function Home() {
 
   return (
     <div className="space-y-24 pb-20">
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "FinancialService",
+                "@id": "https://www.suasion.in/#organization",
+                "name": "Suasion Group",
+                "url": "https://www.suasion.in",
+                "logo": "https://www.suasion.in/logo.png",
+                "image": "https://www.suasion.in/logo.png",
+                "description": "Suasion Group is a Kolkata-based multi-generational financial services house operating across NBFC lending, insurance distribution, property investments, and mutual fund distribution.",
+                "telephone": "+919903040304",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Kolkata",
+                  "addressLocality": "Kolkata",
+                  "addressRegion": "West Bengal",
+                  "addressCountry": "IN"
+                },
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": "22.5726",
+                  "longitude": "88.3639"
+                },
+                "founder": [
+                  {
+                    "@type": "Person",
+                    "name": "Ashok Kataruka"
+                  }
+                ],
+                "foundingDate": "1995-01-05",
+                "sameAs": [
+                  "https://www.suasion.in"
+                ]
+              },
+              {
+                "@type": "WebSite",
+                "@id": "https://www.suasion.in/#website",
+                "url": "https://www.suasion.in",
+                "name": "Suasion Group",
+                "publisher": {
+                  "@id": "https://www.suasion.in/#organization"
+                }
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://www.suasion.in/#webpage",
+                "url": "https://www.suasion.in",
+                "name": "Suasion Group | Integrated Financial Services Kolkata",
+                "isPartOf": {
+                  "@id": "https://www.suasion.in/#website"
+                },
+                "about": {
+                  "@id": "https://www.suasion.in/#organization"
+                },
+                "description": "Suasion Group is a Kolkata-based multi-generational financial services house operating across NBFC lending, insurance distribution, property investments, and mutual fund distribution. Guiding wealth across generations."
+              }
+            ]
+          }),
+        }}
+      />
       
       {/* 1. Hero Section */}
       <section className="relative overflow-hidden pt-12 md:pt-20 lg:pt-28 pb-16 md:pb-24">

@@ -3,6 +3,9 @@ import { AlertTriangle, ShieldCheck, Info } from "lucide-react";
 export const metadata = {
   title: "Compliance & Regulatory Disclaimers",
   description: "Read the regulatory disclaimers, license scopes, and risk warnings for Suasion Group's NBFC, insurance, property, and mutual fund services.",
+  alternates: {
+    canonical: "/compliance",
+  },
 };
 
 export default function Compliance() {

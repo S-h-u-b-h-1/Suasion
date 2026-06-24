@@ -25,6 +25,10 @@ const ibmPlex = IBM_Plex_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.suasion.in"),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: "Suasion Group | Integrated Financial Services Kolkata",
     template: "%s | Suasion Group",
@@ -48,7 +52,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://suasiongroup.in",
+    url: "https://www.suasion.in",
     title: "Suasion Group | Guiding Wealth Across Generations",
     description:
       "A trusted Kolkata-based family office financial service group providing NBFC business finance, insurance, property advisory, and wealth management.",

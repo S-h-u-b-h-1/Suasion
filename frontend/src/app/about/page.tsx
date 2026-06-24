@@ -4,6 +4,9 @@ import { Award, Target, Shield, Heart, GraduationCap, Lightbulb, Compass, ArrowR
 export const metadata = {
   title: "About Us | Our Legacy & Core Values",
   description: "Learn about the legacy of Suasion Group, a family-owned Kolkata financial services firm operating since 1995.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 const values = [

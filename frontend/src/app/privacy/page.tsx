@@ -3,6 +3,9 @@ import { ShieldCheck, Lock, EyeOff, MailCheck } from "lucide-react";
 export const metadata = {
   title: "Privacy Policy | Data Protection",
   description: "Read our privacy policy to understand how Suasion Group handles and protects your personal inquiries and contact information.",
+  alternates: {
+    canonical: "/privacy",
+  },
 };
 
 export default function Privacy() {

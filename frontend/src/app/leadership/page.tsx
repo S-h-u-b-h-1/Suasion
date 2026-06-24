@@ -4,6 +4,9 @@ import { Mail, ShieldCheck, Award, Briefcase, ChevronRight } from "lucide-react"
 export const metadata = {
   title: "Our Leadership | Directors & Advisors",
   description: "Meet the directors of Suasion Group, combining decades of taxation and structured finance expertise with modern digital asset management strategies.",
+  alternates: {
+    canonical: "/leadership",
+  },
 };
 
 const leaders = [

@@ -4,6 +4,9 @@ import { Building2, ShieldCheck, TrendingUp, Calendar, ArrowRight, ShieldAlert }
 export const metadata = {
   title: "Group Companies | Structure & Verticals",
   description: "View the legal corporate structures of Suasion Group, including Suasion Finvest Private Limited, Suasion Services Private Limited, Suasion Infrastructure Private Limited, and Suasion Securities.",
+  alternates: {
+    canonical: "/companies",
+  },
 };
 
 const companies = [

@@ -14,6 +14,9 @@ import {
 export const metadata = {
   title: "Our Services | Borrow, Protect, Invest & Grow",
   description: "Explore the comprehensive financial services of Suasion Group, spanning NBFC business loans, life insurance distribution, property investments, and mutual funds.",
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 export default function Services() {
