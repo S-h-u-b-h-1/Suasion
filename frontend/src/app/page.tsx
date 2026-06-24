@@ -653,8 +653,11 @@ export default function Home() {
             </div>
 
             {/* Shubhaang Kataruka */}
-            <div className="bg-white p-6 rounded-lg border border-gold/15 text-center space-y-4 flex flex-col justify-center h-full">
+            <div className="bg-white p-6 rounded-lg border border-gold/15 text-center space-y-4 flex flex-col justify-between h-full">
               <div className="space-y-4">
+                <div className="relative w-24 h-24 mx-auto rounded-full overflow-hidden border-2 border-gold/45 shadow">
+                  <img src="/shubhaang_kataruka.jpg" alt="Shubhaang Kataruka" className="w-full h-full object-cover object-top" />
+                </div>
                 <div>
                   <h3 className="font-serif font-bold text-lg text-navy">Shubhaang Kataruka</h3>
                   <p className="text-xs text-gold uppercase tracking-wider font-semibold mt-1">

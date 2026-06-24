@@ -37,6 +37,7 @@ const leaders = [
   },
   {
     name: "Shubhaang Kataruka",
+    image: "/shubhaang_kataruka.jpg",
     title: "Director & Next-Gen Leader",
     credentials: "B.Tech & Wealth Advisory Specialist",
     verticals: "Suasion Securities & Suasion Services",
