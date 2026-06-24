@@ -3,6 +3,7 @@ import { Playfair_Display, Inter, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import SmoothScroll from "@/components/effects/SmoothScroll";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -100,9 +101,11 @@ export default function RootLayout({
       className={`${playfair.variable} ${inter.variable} ${ibmPlex.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-ivory text-charcoal font-sans">
-        <Navbar />
-        <main className="flex-grow">{children}</main>
-        <Footer />
+        <SmoothScroll>
+          <Navbar />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+        </SmoothScroll>
       </body>
     </html>
   );

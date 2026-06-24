@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import { 
   ArrowRight, 
   TrendingUp, 
@@ -17,6 +18,9 @@ import {
   Briefcase,
   Layers
 } from "lucide-react";
+
+const ThreeGoldSphere = dynamic(() => import("../components/effects/ThreeGoldSphere"), { ssr: false });
+const ThreeGoldParticles = dynamic(() => import("../components/effects/ThreeGoldParticles"), { ssr: false });
 
 // FAQ Data
 const faqs = [
@@ -54,24 +58,27 @@ export default function Home() {
       
       {/* 1. Hero Section */}
       <section className="relative overflow-hidden pt-12 md:pt-20 lg:pt-28 pb-16 md:pb-24">
-        {/* Luxury Background Shapes */}
-        <div className="absolute top-1/4 left-1/10 w-96 h-96 rounded-full bg-navy/5 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-1/10 right-1/10 w-96 h-96 rounded-full bg-gold/5 blur-3xl pointer-events-none" />
+        {/* Ambient 3D background particles */}
+        <ThreeGoldParticles />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Luxury Background Glows */}
+        <div className="absolute top-1/4 left-1/10 w-96 h-96 rounded-full bg-gold/5 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-1/10 right-1/10 w-96 h-96 rounded-full bg-navy/10 blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Hero Left Content */}
             <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-navy/5 border border-navy/10">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-navy/5 border border-gold/20 backdrop-blur-sm shadow-sm">
                 <Award className="h-4 w-4 text-gold" />
-                <span className="text-xs font-semibold uppercase tracking-wider text-navy">
+                <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-navy">
                   Kolkata's Legacy Financial Partner Since 1995
                 </span>
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-navy leading-tight tracking-tight text-wrap">
                 Guiding Wealth <br />
-                <span className="text-gold italic font-medium">Across Generations</span>
+                <span className="text-gold-gradient italic font-medium">Across Generations</span>
               </h1>
               <p className="text-base sm:text-lg text-charcoal/80 max-w-2xl mx-auto lg:mx-0 leading-relaxed text-wrap">
                 Suasion Group is a Kolkata-based integrated financial services group helping families, professionals, entrepreneurs, and businesses borrow, protect, invest, and grow wealth.
@@ -93,66 +100,28 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Hero Right Visual (Luxury CSS Illustration) */}
+            {/* Hero Right Visual (Luxury 3D Interactive Canvas) */}
             <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
-              <div className="w-full max-w-[420px] aspect-[4/5] rounded-2xl glass-panel relative p-8 flex flex-col justify-between border-gold/30 shadow-2xl relative overflow-hidden group">
-                {/* Abstract gold curves */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 rounded-full blur-xl" />
-                <div className="absolute bottom-0 left-0 w-32 h-32 bg-navy/10 rounded-full blur-xl" />
-                
-                {/* Header */}
-                <div className="space-y-4">
+              <div className="w-full max-w-[420px] aspect-[4/5] rounded-2xl glass-panel relative p-8 flex flex-col justify-between border-gold/30 shadow-2xl relative overflow-hidden bg-navy/20">
+                <div className="absolute inset-0 z-0">
+                  <ThreeGoldSphere />
+                </div>
+                <div className="relative z-10 flex flex-col justify-between h-full pointer-events-none">
+                  {/* Top metadata */}
                   <div className="flex justify-between items-start">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-navy-gold flex items-center justify-center border border-gold/40">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-navy-gold flex items-center justify-center border border-gold/40 shadow-lg">
                       <span className="text-gold font-serif font-bold text-xl">S</span>
                     </div>
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-gold bg-navy px-2.5 py-1 rounded">
-                      Legacy House
+                    <span className="text-[9px] uppercase font-bold tracking-widest text-gold bg-navy/80 px-2.5 py-1 rounded border border-gold/20 backdrop-blur-sm">
+                      Interactive 3D
                     </span>
                   </div>
-                  <div className="pt-2">
-                    <h3 className="text-xl font-serif font-bold text-navy">Suasion Group</h3>
-                    <p className="text-xs text-charcoal/60 mt-1">One Trusted Partner for Every Financial Decision</p>
+                  {/* Floating instructions */}
+                  <div className="text-center py-3 bg-navy/80 backdrop-blur-md rounded-lg border border-gold/15 mt-auto pointer-events-auto">
+                    <p className="text-[10px] text-gold uppercase tracking-wider font-semibold">Suasion Wealth Nexus</p>
+                    <p className="text-[9px] text-white/70 mt-0.5 px-2">Move cursor over the sphere to interact with network nodes</p>
                   </div>
                 </div>
-
-                {/* Vertical features */}
-                <div className="space-y-4 my-6">
-                  <div className="flex items-center gap-3 p-3 bg-white/50 rounded border border-gold/15">
-                    <Briefcase className="h-5 w-5 text-navy shrink-0" />
-                    <div>
-                      <p className="text-xs font-bold text-navy">Borrow</p>
-                      <p className="text-[10px] text-charcoal/70">NBFC Lending & Structured Finance</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3 p-3 bg-white/50 rounded border border-gold/15">
-                    <ShieldCheck className="h-5 w-5 text-navy shrink-0" />
-                    <div>
-                      <p className="text-xs font-bold text-navy">Protect</p>
-                      <p className="text-[10px] text-charcoal/70">Life Insurance Planning & Real Assets</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3 p-3 bg-white/50 rounded border border-gold/15">
-                    <TrendingUp className="h-5 w-5 text-navy shrink-0" />
-                    <div>
-                      <p className="text-xs font-bold text-navy">Invest & Grow</p>
-                      <p className="text-[10px] text-charcoal/70">Mutual Funds & Wealth Management</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Footer stats */}
-                <div className="border-t border-gold/20 pt-4 flex justify-between items-center">
-                  <div>
-                    <span className="block text-2xl font-bold text-navy stats-number">1995</span>
-                    <span className="text-[9px] uppercase tracking-wider text-charcoal/60">Incorporated</span>
-                  </div>
-                  <div className="text-right">
-                    <span className="block text-2xl font-bold text-navy stats-number">100%</span>
-                    <span className="text-[9px] uppercase tracking-wider text-charcoal/60">Client Centric</span>
-                  </div>
-                </div>
-
               </div>
             </div>
 
@@ -161,9 +130,10 @@ export default function Home() {
       </section>
 
       {/* 2. Trust Stats Section */}
-      <section className="bg-gradient-navy-gold py-16 text-white relative">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.05),transparent)] pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-navy-gold py-16 text-white relative overflow-hidden">
+        <ThreeGoldParticles />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.08),transparent)] pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 text-center">
             <div className="space-y-2">
               <span className="block text-4xl sm:text-5xl font-bold text-gold stats-number">1995</span>
@@ -217,15 +187,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. Three Companies / Verticals Cards */}
-      <section className="bg-[#F0ECE1] py-20 border-y border-gold/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      {/* 4. Three Companies / Verticals Cards (Obsidian Dark with Gold accents & floating 3D dust) */}
+      <section className="bg-obsidian py-20 border-y border-gold/20 relative overflow-hidden text-white/80">
+        <ThreeGoldParticles />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
           
           <div className="text-center space-y-3">
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-navy">
+            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white">
               Our Core Companies
             </h2>
-            <p className="text-sm text-charcoal/70 max-w-xl mx-auto">
+            <p className="text-sm text-white/70 max-w-xl mx-auto">
               Our businesses are organized into dedicated verticals, providing tailored expertise under a unified standard of care.
             </p>
           </div>
@@ -233,33 +204,33 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             
             {/* Card 1: Suasion Finvest */}
-            <div className="glass-panel glass-panel-hover p-8 rounded-xl flex flex-col justify-between h-full bg-white/80">
+            <div className="glass-panel glass-panel-hover p-8 rounded-xl flex flex-col justify-between h-full bg-white/5 border-gold/15">
               <div className="space-y-6">
-                <div className="w-12 h-12 rounded-lg bg-navy/5 flex items-center justify-center border border-navy/10 text-navy">
+                <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center border border-gold/30 text-gold shadow-sm">
                   <Building2 className="h-6 w-6" />
                 </div>
                 <div className="space-y-2">
                   <span className="text-[10px] font-bold uppercase tracking-widest text-gold block">
                     NBFC Vertical
                   </span>
-                  <h3 className="text-xl font-serif font-bold text-navy">
+                  <h3 className="text-xl font-serif font-bold text-white">
                     Suasion Finvest Pvt Ltd
                   </h3>
                 </div>
-                <p className="text-sm text-charcoal/80 leading-relaxed">
+                <p className="text-sm text-white/70 leading-relaxed">
                   Established in 1995, Suasion Finvest represents the group's lending backbone. We offer tailored business funding, structured finance, and investment-backed capital solutions.
                 </p>
-                <ul className="text-xs space-y-2.5 text-charcoal/70">
+                <ul className="text-xs space-y-2.5 text-white/60">
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-emerald shrink-0" />
+                    <CheckCircle2 className="h-4 w-4 text-gold shrink-0" />
                     Business Lending & Expansion Capital
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-emerald shrink-0" />
+                    <CheckCircle2 className="h-4 w-4 text-gold shrink-0" />
                     Structured Finance Solutions
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-emerald shrink-0" />
+                    <CheckCircle2 className="h-4 w-4 text-gold shrink-0" />
                     Incorporated 05 January 1995
                   </li>
                 </ul>
@@ -267,7 +238,7 @@ export default function Home() {
               <div className="pt-8">
                 <Link 
                   href="/services#nbfc"
-                  className="w-full inline-flex items-center justify-center py-2.5 rounded text-xs font-bold uppercase tracking-wider bg-navy text-white hover:bg-gold hover:text-navy transition-all duration-300"
+                  className="w-full inline-flex items-center justify-center py-2.5 rounded text-xs font-bold uppercase tracking-wider bg-gold text-navy hover:bg-white hover:text-navy transition-all duration-300 font-bold"
                 >
                   Explore Lending
                 </Link>
@@ -275,33 +246,33 @@ export default function Home() {
             </div>
 
             {/* Card 2: Suasion Services */}
-            <div className="glass-panel glass-panel-hover p-8 rounded-xl flex flex-col justify-between h-full bg-white/80">
+            <div className="glass-panel glass-panel-hover p-8 rounded-xl flex flex-col justify-between h-full bg-white/5 border-gold/15">
               <div className="space-y-6">
-                <div className="w-12 h-12 rounded-lg bg-navy/5 flex items-center justify-center border border-navy/10 text-navy">
+                <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center border border-gold/30 text-gold shadow-sm">
                   <ShieldCheck className="h-6 w-6" />
                 </div>
                 <div className="space-y-2">
                   <span className="text-[10px] font-bold uppercase tracking-widest text-gold block">
                     Protection & Real Assets
                   </span>
-                  <h3 className="text-xl font-serif font-bold text-navy">
+                  <h3 className="text-xl font-serif font-bold text-white">
                     Suasion Services Pvt Ltd
                   </h3>
                 </div>
-                <p className="text-sm text-charcoal/80 leading-relaxed">
+                <p className="text-sm text-white/70 leading-relaxed">
                   Our protection and asset planning arm. We structure comprehensive life insurance portfolios and advise on strategic property investments for capital growth and yields.
                 </p>
-                <ul className="text-xs space-y-2.5 text-charcoal/70">
+                <ul className="text-xs space-y-2.5 text-white/60">
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-emerald shrink-0" />
+                    <CheckCircle2 className="h-4 w-4 text-gold shrink-0" />
                     Bajaj Allianz, LIC & Aditya Birla Life
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-emerald shrink-0" />
+                    <CheckCircle2 className="h-4 w-4 text-gold shrink-0" />
                     Life, Term & Guaranteed Income Plans
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-emerald shrink-0" />
+                    <CheckCircle2 className="h-4 w-4 text-gold shrink-0" />
                     Commercial & Residential Real Estate
                   </li>
                 </ul>
@@ -309,7 +280,7 @@ export default function Home() {
               <div className="pt-8">
                 <Link 
                   href="/services#insurance"
-                  className="w-full inline-flex items-center justify-center py-2.5 rounded text-xs font-bold uppercase tracking-wider bg-navy text-white hover:bg-gold hover:text-navy transition-all duration-300"
+                  className="w-full inline-flex items-center justify-center py-2.5 rounded text-xs font-bold uppercase tracking-wider bg-gold text-navy hover:bg-white hover:text-navy transition-all duration-300 font-bold"
                 >
                   Explore Protection
                 </Link>
@@ -317,33 +288,33 @@ export default function Home() {
             </div>
 
             {/* Card 3: Suasion Securities */}
-            <div className="glass-panel glass-panel-hover p-8 rounded-xl flex flex-col justify-between h-full bg-white/80">
+            <div className="glass-panel glass-panel-hover p-8 rounded-xl flex flex-col justify-between h-full bg-white/5 border-gold/15">
               <div className="space-y-6">
-                <div className="w-12 h-12 rounded-lg bg-navy/5 flex items-center justify-center border border-navy/10 text-navy">
+                <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center border border-gold/30 text-gold shadow-sm">
                   <TrendingUp className="h-6 w-6" />
                 </div>
                 <div className="space-y-2">
                   <span className="text-[10px] font-bold uppercase tracking-widest text-gold block">
-                    Wealth & Securities
+                    Gold Standard Wealth
                   </span>
-                  <h3 className="text-xl font-serif font-bold text-navy">
+                  <h3 className="text-xl font-serif font-bold text-white">
                     Suasion Securities
                   </h3>
                 </div>
-                <p className="text-sm text-charcoal/80 leading-relaxed">
+                <p className="text-sm text-white/70 leading-relaxed">
                   Launched in 2024 to provide modern, tech-enabled wealth management. We distribute mutual funds, plan SIPs, perform asset allocation, and design goal-based portfolios.
                 </p>
-                <ul className="text-xs space-y-2.5 text-charcoal/70">
+                <ul className="text-xs space-y-2.5 text-white/60">
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-emerald shrink-0" />
+                    <CheckCircle2 className="h-4 w-4 text-gold shrink-0" />
                     Mutual Funds & Goal-Based SIPs
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-emerald shrink-0" />
+                    <CheckCircle2 className="h-4 w-4 text-gold shrink-0" />
                     Portfolio Reviews & Risk Profiling
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-emerald shrink-0" />
+                    <CheckCircle2 className="h-4 w-4 text-gold shrink-0" />
                     Launched 01 April 2024
                   </li>
                 </ul>
@@ -351,7 +322,7 @@ export default function Home() {
               <div className="pt-8">
                 <Link 
                   href="/services#securities"
-                  className="w-full inline-flex items-center justify-center py-2.5 rounded text-xs font-bold uppercase tracking-wider bg-navy text-white hover:bg-gold hover:text-navy transition-all duration-300"
+                  className="w-full inline-flex items-center justify-center py-2.5 rounded text-xs font-bold uppercase tracking-wider bg-gold text-navy hover:bg-white hover:text-navy transition-all duration-300 font-bold"
                 >
                   Explore Wealth
                 </Link>
@@ -421,6 +392,7 @@ export default function Home() {
       {/* 6. Why Choose Suasion Group */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-navy rounded-2xl text-white p-8 md:p-16 relative overflow-hidden shadow-xl border border-gold/20">
+          <ThreeGoldParticles />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(212,175,55,0.08),transparent)] pointer-events-none" />
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
@@ -651,7 +623,8 @@ export default function Home() {
       {/* 9. Client Consultation CTA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-gradient-navy-gold text-white rounded-2xl p-8 md:p-16 text-center space-y-6 relative overflow-hidden border border-gold/20 shadow-lg">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.06),transparent)] pointer-events-none" />
+          <ThreeGoldParticles />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.08),transparent)] pointer-events-none" />
           <h2 className="text-3xl sm:text-4xl font-serif font-bold text-gold max-w-2xl mx-auto leading-tight">
             Ready to Protect and Grow Your Generational Wealth?
           </h2>

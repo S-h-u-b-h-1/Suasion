@@ -2,7 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { Mail, Phone, MapPin, ArrowRight, ShieldCheck, CheckCircle2 } from "lucide-react";
+
+const ThreeGoldParticles = dynamic(() => import("../effects/ThreeGoldParticles"), { ssr: false });
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -43,8 +46,9 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-gradient-navy-gold text-white/80 pt-16 pb-8 border-t border-gold/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-gradient-navy-gold text-white/80 pt-16 pb-8 border-t border-gold/20 relative overflow-hidden">
+      <ThreeGoldParticles />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-white/10">
           
           {/* Brand Info */}

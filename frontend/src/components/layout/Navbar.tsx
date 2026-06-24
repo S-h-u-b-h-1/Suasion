@@ -42,7 +42,7 @@ export default function Navbar() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/80 backdrop-blur-md border-b border-gold/10 shadow-sm"
+          ? "bg-white/90 backdrop-blur-md border-b border-gold/25 shadow-md shadow-gold/5"
           : "bg-transparent"
       }`}
     >
@@ -75,13 +75,13 @@ export default function Navbar() {
                   href={link.href}
                   className={`text-sm font-medium tracking-wide transition-all duration-200 relative py-2 ${
                     isActive
-                      ? "text-navy font-semibold"
-                      : "text-charcoal/80 hover:text-navy"
+                      ? "text-navy font-semibold drop-shadow-[0_1px_2px_rgba(212,175,55,0.2)]"
+                      : "text-charcoal/80 hover:text-gold"
                   }`}
                 >
                   {link.name}
                   {isActive && (
-                    <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-gold rounded-full" />
+                    <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-gold rounded-full shadow-[0_0_8px_#D4AF37]" />
                   )}
                 </Link>
               );
@@ -130,8 +130,8 @@ export default function Navbar() {
                 href={link.href}
                 className={`block px-3 py-3 rounded-md text-base font-medium transition-colors ${
                   isActive
-                    ? "bg-navy/5 text-navy font-semibold border-l-4 border-gold"
-                    : "text-charcoal/80 hover:bg-gray-50 hover:text-navy"
+                    ? "bg-navy/5 text-navy font-semibold border-l-4 border-gold drop-shadow-[0_1px_2px_rgba(212,175,55,0.1)]"
+                    : "text-charcoal/80 hover:bg-gold/5 hover:text-gold"
                 }`}
               >
                 {link.name}
