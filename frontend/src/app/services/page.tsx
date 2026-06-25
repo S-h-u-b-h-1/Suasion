@@ -162,7 +162,7 @@ export default function Services() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             <div className="lg:col-span-7 space-y-6">
               <p className="text-sm text-charcoal/80 leading-relaxed text-wrap">
-                Protection is the foundation of wealth preservation. Through our partnership with premium insurance companies, Suasion Services Private Limited structures custom life insurance plans. We help you hedge liabilities, protect business continuation, and secure guaranteed income streams. Our team boasts exceptional expertise, with 3 MDRT (Million Dollar Round Table) qualifiers in our family over the past 3 consecutive years, including the youngest MDRT at ABSLI (Aditya Birla Sun Life Insurance) achieved by Shubhaang Kataruka.
+                Protection is the foundation of wealth preservation. Through our partnership with premium insurance companies, Suasion Services Private Limited structures custom life insurance plans. We help you hedge liabilities, protect business continuation, and secure guaranteed income streams. Our team boasts exceptional expertise, with 3 MDRT (Million Dollar Round Table) qualifications in our family (Sumaan Shree Kataruka qualifying twice and Shubhaang Kataruka qualifying once, as the youngest MDRT at ABSLI).
               </p>
 
               <h3 className="font-serif font-bold text-navy text-lg">Key Insurance Portfolios:</h3>

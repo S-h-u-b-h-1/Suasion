@@ -37,7 +37,7 @@ const leaders = [
     name: "Sumaan Shree Kataruka",
     image: "/sumaan_kataruka.jpg",
     title: "Director",
-    credentials: "Insurance & Real Asset Structuring Advisor",
+    credentials: "Insurance & Real Asset Advisor | Double MDRT Qualifier",
     verticals: "Suasion Services Pvt Ltd & Suasion Infrastructure Pvt Ltd",
     expertise: [
       "Life Insurance Portfolio Audits",
@@ -45,13 +45,13 @@ const leaders = [
       "Real Estate Yield Analysis & Sourcing",
       "Guaranteed Asset Allocation"
     ],
-    bio: "Sumaan Shree Kataruka leads operations for Suasion Services Private Limited and Suasion Infrastructure Private Limited. With extensive experience in estate planning, she manages the group's corporate insurance relationships with Aditya Birla Sun Life, LIC, and Bajaj Allianz. Concurrently, she oversees property investment advisory, evaluating commercial and residential portfolios to structure stable, inflation-hedged yields for HNI families."
+    bio: "Sumaan Shree Kataruka leads operations for Suasion Services Private Limited and Suasion Infrastructure Private Limited. A double MDRT (Million Dollar Round Table) qualifier in the life insurance domain, she brings extensive experience in estate planning, managing the group's corporate insurance relationships with Aditya Birla Sun Life, LIC, and Bajaj Allianz. Concurrently, she oversees property investment advisory, evaluating commercial and residential portfolios to structure stable, inflation-hedged yields for HNI families."
   },
   {
     name: "Shubhaang Kataruka",
     image: "/shubhaang_kataruka.jpg",
     title: "Director & Next-Gen Leader",
-    credentials: "B.Tech & Wealth Advisory Specialist | MDRT Qualifier",
+    credentials: "B.Tech & Wealth Advisory Specialist | MDRT Qualifier (1x)",
     verticals: "Suasion Securities & Suasion Services",
     expertise: [
       "Digital Financial Strategies",
@@ -59,7 +59,7 @@ const leaders = [
       "Asset Allocation & Risk Profiling",
       "Client Experience & Technical Architecture"
     ],
-    bio: "Shubhaang Kataruka represents the next-generation leadership of Suasion Group, driving digital-first initiatives across our wealth management desk. He manages mutual fund distribution and SIP planning under Suasion Securities. Leveraging modern data tools, Shubhaang is committed to helping young professionals and business families start early, allocate assets disciplinedly, and experience premium customer support. Shubhaang is also an MDRT qualifier, achieving the distinction of being the youngest MDRT qualifier at ABSLI (Aditya Birla Sun Life Insurance)."
+    bio: "Shubhaang Kataruka represents the next-generation leadership of Suasion Group, driving digital-first initiatives across our wealth management desk. He manages mutual fund distribution and SIP planning under Suasion Securities. Leveraging modern data tools, Shubhaang is committed to helping young professionals and business families start early, allocate assets disciplinedly, and experience premium customer support. Shubhaang has also qualified once for the MDRT achievement, achieving the distinction of being the youngest MDRT qualifier at ABSLI (Aditya Birla Sun Life Insurance)."
   }
 ];
 

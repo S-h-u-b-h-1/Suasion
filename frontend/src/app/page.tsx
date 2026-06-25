@@ -336,7 +336,7 @@ export default function Home() {
                   </h3>
                 </div>
                 <p className="text-sm text-white/70 leading-relaxed">
-                  Our life insurance and estate protection arm. Backed by 3 MDRT qualifiers in our family since the past 3 consecutive years (including the youngest MDRT at ABSLI).
+                  Our life insurance and estate protection arm. Backed by 3 MDRT qualifications in our family (Sumaan Shree Kataruka twice, and Shubhaang Kataruka once as the youngest MDRT at ABSLI).
                 </p>
                 <ul className="text-xs space-y-2.5 text-white/60">
                   <li className="flex items-center gap-2">
@@ -720,11 +720,11 @@ export default function Home() {
                 <div>
                   <h3 className="font-serif font-bold text-lg text-navy">Sumaan Shree Kataruka</h3>
                   <p className="text-xs text-gold uppercase tracking-wider font-semibold mt-1">
-                    Director
+                    Director | Double MDRT Qualifier
                   </p>
                 </div>
                 <p className="text-xs text-charcoal/70 leading-relaxed">
-                  Central leadership overseeing life insurance protection, estate planning, and commercial property investments.
+                  Double MDRT qualifier in the life insurance domain, overseeing estate planning and property investments.
                 </p>
               </div>
             </div>
@@ -738,11 +738,11 @@ export default function Home() {
                 <div>
                   <h3 className="font-serif font-bold text-lg text-navy">Shubhaang Kataruka</h3>
                   <p className="text-xs text-gold uppercase tracking-wider font-semibold mt-1">
-                    Director | MDRT Qualifier
+                    Director | MDRT Qualifier (1x)
                   </p>
                 </div>
                 <p className="text-xs text-charcoal/70 leading-relaxed">
-                  ABSLI's youngest MDRT qualifier, managing mutual fund distribution and next-gen wealth systems.
+                  ABSLI's youngest MDRT qualifier (qualified once), managing mutual fund distribution and wealth systems.
                 </p>
               </div>
             </div>
