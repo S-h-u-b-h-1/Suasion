@@ -74,7 +74,7 @@ export default function Privacy() {
             3. No Unauthorized Sharing
           </h2>
           <p>
-            We hold client trust in high regard. <strong>We do not sell, rent, trade, or share your personal information</strong> with any third-party marketing companies. Your details are shared with our verified corporate insurance partners (Bajaj Allianz, LIC, Aditya Birla) only after your explicit consent and during formal policy application cycles.
+            We hold client trust in high regard. <strong>We do not sell, rent, trade, or share your personal information</strong> with any third-party marketing companies. Your details are shared with our verified corporate insurance partners (Aditya Birla, LIC, Bajaj Allianz) only after your explicit consent and during formal policy application cycles.
           </p>
         </div>
 

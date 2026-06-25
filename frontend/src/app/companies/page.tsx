@@ -38,7 +38,7 @@ const companies = [
     role: "The estate protection and life insurance planning arm, distributing customized protection plans and wealth reservation strategies.",
     incorporation: "18 August 2011",
     category: "Life Insurance Distribution & Solicitations",
-    details: "Suasion Services protects family wealth by distributing life insurance, term plans, guaranteed income products, and retirement annuities from top-tier partners Bajaj Allianz Life, LIC, and Aditya Birla Sun Life. Our focus is ensuring robust risk hedging and estate preservation across generations.",
+    details: "Suasion Services protects family wealth by distributing life insurance, term plans, guaranteed income products, and retirement annuities from top-tier partners Aditya Birla Sun Life, LIC, and Bajaj Allianz Life. Our focus is ensuring robust risk hedging and estate preservation across generations.",
     link: "/services#insurance",
     btnText: "Protection Services"
   },

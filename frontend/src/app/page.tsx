@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     question: "Who are your insurance partners?",
-    answer: "Suasion Services Private Limited partners with top-tier insurance companies, including Bajaj Allianz Life Insurance, LIC (Life Insurance Corporation of India), and Aditya Birla Sun Life Insurance, to offer robust protection and guaranteed income plans."
+    answer: "Suasion Services Private Limited partners with top-tier insurance companies, including Aditya Birla Sun Life Insurance, LIC (Life Insurance Corporation of India), and Bajaj Allianz Life Insurance, to offer robust protection and guaranteed income plans."
   },
   {
     question: "Do you offer lending solutions for businesses?",
@@ -73,9 +73,10 @@ export default function Home() {
                 "telephone": "+919903040304",
                 "address": {
                   "@type": "PostalAddress",
-                  "streetAddress": "Kolkata",
+                  "streetAddress": "C-12, 3rd floor, 41, B B Ganguly Street",
                   "addressLocality": "Kolkata",
                   "addressRegion": "West Bengal",
+                  "postalCode": "700012",
                   "addressCountry": "IN"
                 },
                 "geo": {
@@ -335,20 +336,20 @@ export default function Home() {
                   </h3>
                 </div>
                 <p className="text-sm text-white/70 leading-relaxed">
-                  Our dedicated estate protection and life insurance solicitation arm. We distribute custom plans to hedge family liabilities and secure legacy payouts from leading insurers.
+                  Our life insurance and estate protection arm. Backed by 3 MDRT qualifiers in our family since the past 3 consecutive years (including the youngest MDRT at ABSLI).
                 </p>
                 <ul className="text-xs space-y-2.5 text-white/60">
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-gold shrink-0" />
-                    Bajaj Allianz, LIC & Aditya Birla Life
+                    Aditya Birla Life, LIC & Bajaj Allianz
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-gold shrink-0" />
-                    Life, Term & Guaranteed Income Plans
+                    3 MDRTs in the family (last 3 years)
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-gold shrink-0" />
-                    Incorporated 18 August 2011
+                    Life, Term & Guaranteed Income
                   </li>
                 </ul>
               </div>
@@ -483,7 +484,7 @@ export default function Home() {
             <div className="w-10 h-10 rounded-full bg-navy/5 flex items-center justify-center text-navy font-bold">2</div>
             <h3 className="font-serif font-bold text-lg text-navy">Estate Protection</h3>
             <p className="text-xs text-charcoal/70 leading-relaxed">
-              Providing family peace of mind with term insurance and structured guaranteed income plans from Bajaj Allianz, LIC, and Birla Sun Life.
+              Providing family peace of mind with term insurance and structured guaranteed income plans from Aditya Birla Sun Life, LIC, and Bajaj Allianz.
             </p>
           </div>
 
@@ -701,11 +702,11 @@ export default function Home() {
                 <div>
                   <h3 className="font-serif font-bold text-lg text-navy">Ashok Kataruka</h3>
                   <p className="text-xs text-gold uppercase tracking-wider font-semibold mt-1">
-                    Senior Leader & Chartered Accountant
+                    Founder | CA (1987), CS, DISA
                   </p>
                 </div>
                 <p className="text-xs text-charcoal/70 leading-relaxed">
-                  Expertise in finance, corporate taxation, and complex financial structuring for Suasion Finvest.
+                  Chartered Accountant (qualified in 1987) managing A K Kataruka & Co. St. Xavier's, CS, and DISA alumnus.
                 </p>
               </div>
             </div>
@@ -737,11 +738,11 @@ export default function Home() {
                 <div>
                   <h3 className="font-serif font-bold text-lg text-navy">Shubhaang Kataruka</h3>
                   <p className="text-xs text-gold uppercase tracking-wider font-semibold mt-1">
-                    Next-Gen Leadership
+                    Director | MDRT Qualifier
                   </p>
                 </div>
                 <p className="text-xs text-charcoal/70 leading-relaxed">
-                  Driving technology, digital asset allocation tools, and mutual fund client experience.
+                  ABSLI's youngest MDRT qualifier, managing mutual fund distribution and next-gen wealth systems.
                 </p>
               </div>
             </div>

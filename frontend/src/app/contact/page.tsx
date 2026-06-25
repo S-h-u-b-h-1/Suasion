@@ -183,7 +183,7 @@ function ContactForm() {
             <MapPin className="h-6 w-6 text-gold shrink-0 mt-0.5" />
             <div>
               <h4 className="font-bold text-navy text-sm">Office Location</h4>
-              <p className="text-xs text-charcoal/70 mt-1">Kolkata, West Bengal, India</p>
+              <p className="text-xs text-charcoal/70 mt-1">C-12, 3rd floor, 41, B B Ganguly Street, Kolkata - 700012</p>
             </div>
           </div>
 

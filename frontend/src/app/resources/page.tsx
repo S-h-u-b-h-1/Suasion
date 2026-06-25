@@ -33,7 +33,7 @@ export const blogPosts = [
       
       For business owners and professionals, term insurance is critical to shield their estate. If a business carries liabilities—such as working capital loans, structured credit, or commercial mortgages—a term plan can be structured to cover those exact liabilities. This ensures that in the event of an untimely demise, the business debts do not fall upon family members or force the liquidation of valuable real assets.
       
-      We advise clients to calculate their Human Life Value (HLV) by assessing their current income, future liabilities, and children's education milestones, then securing a term cover that matches that sum from highly-rated insurers like LIC, Bajaj Allianz, or Aditya Birla Sun Life.
+      We advise clients to calculate their Human Life Value (HLV) by assessing their current income, future liabilities, and children's education milestones, then securing a term cover that matches that sum from highly-rated insurers like Aditya Birla Sun Life, LIC, or Bajaj Allianz.
     `
   },
   {

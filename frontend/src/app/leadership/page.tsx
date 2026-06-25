@@ -23,7 +23,7 @@ const leaders = [
     name: "Ashok Kataruka",
     image: "/ashok_kataruka.jpg",
     title: "Senior Leader & Founder",
-    credentials: "Chartered Accountant (CA)",
+    credentials: "CA (1987), CS, DISA | Alumnus, St. Xavier's College",
     verticals: "Suasion Finvest Private Limited",
     expertise: [
       "Structured Finance & Business Funding",
@@ -31,7 +31,7 @@ const leaders = [
       "Corporate Advisory & Statutory Audits",
       "Financial Restructuring & Capital Allocation"
     ],
-    bio: "Ashok Kataruka has been the guiding force behind Suasion Group since its founding in 1995. As a veteran Chartered Accountant based in Kolkata, he has structured financial growth strategies for hundreds of business houses, advising on tax compliance, statutory audits, and debt syndication. Under his leadership, Suasion Finvest grew into a trusted NBFC provider in Eastern India."
+    bio: "Ashok Kataruka has been the guiding force behind Suasion Group since its founding in 1995. He is a veteran Chartered Accountant (qualified in 1987) and manages the CA firm A K Kataruka & Co. An alumnus of St. Xavier's College, Kolkata, he also holds Company Secretary (CS) and DISA (Diploma in Information System Audit) qualifications. Under his leadership, Suasion Finvest grew into a trusted NBFC provider in Eastern India."
   },
   {
     name: "Sumaan Shree Kataruka",
@@ -45,13 +45,13 @@ const leaders = [
       "Real Estate Yield Analysis & Sourcing",
       "Guaranteed Asset Allocation"
     ],
-    bio: "Sumaan Shree Kataruka leads operations for Suasion Services Private Limited and Suasion Infrastructure Private Limited. With extensive experience in estate planning, she manages the group's corporate insurance relationships with Bajaj Allianz, LIC, and Aditya Birla Sun Life. Concurrently, she oversees property investment advisory, evaluating commercial and residential portfolios to structure stable, inflation-hedged yields for HNI families."
+    bio: "Sumaan Shree Kataruka leads operations for Suasion Services Private Limited and Suasion Infrastructure Private Limited. With extensive experience in estate planning, she manages the group's corporate insurance relationships with Aditya Birla Sun Life, LIC, and Bajaj Allianz. Concurrently, she oversees property investment advisory, evaluating commercial and residential portfolios to structure stable, inflation-hedged yields for HNI families."
   },
   {
     name: "Shubhaang Kataruka",
     image: "/shubhaang_kataruka.jpg",
     title: "Director & Next-Gen Leader",
-    credentials: "B.Tech & Wealth Advisory Specialist",
+    credentials: "B.Tech & Wealth Advisory Specialist | MDRT Qualifier",
     verticals: "Suasion Securities & Suasion Services",
     expertise: [
       "Digital Financial Strategies",
@@ -59,7 +59,7 @@ const leaders = [
       "Asset Allocation & Risk Profiling",
       "Client Experience & Technical Architecture"
     ],
-    bio: "Shubhaang Kataruka represents the next-generation leadership of Suasion Group, driving digital-first initiatives across our wealth management desk. He manages mutual fund distribution and SIP planning under Suasion Securities. Leveraging modern data tools, Shubhaang is committed to helping young professionals and business families start early, allocate assets disciplinedly, and experience premium customer support."
+    bio: "Shubhaang Kataruka represents the next-generation leadership of Suasion Group, driving digital-first initiatives across our wealth management desk. He manages mutual fund distribution and SIP planning under Suasion Securities. Leveraging modern data tools, Shubhaang is committed to helping young professionals and business families start early, allocate assets disciplinedly, and experience premium customer support. Shubhaang is also an MDRT qualifier, achieving the distinction of being the youngest MDRT qualifier at ABSLI (Aditya Birla Sun Life Insurance)."
   }
 ];
 

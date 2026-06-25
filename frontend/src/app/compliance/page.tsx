@@ -53,7 +53,7 @@ export default function Compliance() {
             2. Insurance Distribution (Suasion Services Private Limited)
           </h2>
           <p className="text-xs sm:text-sm text-charcoal/70 leading-relaxed text-wrap">
-            Insurance is the subject matter of solicitation. Suasion Services Private Limited operates as a corporate distributor/agent. Product benefits, payouts, bonuses, and terms are governed strictly by the policy contract issued by our corporate insurance partners: <strong>Bajaj Allianz Life Insurance</strong>, <strong>Life Insurance Corporation of India (LIC)</strong>, and <strong>Aditya Birla Sun Life Insurance</strong>. Prospective clients should read the sales brochure and product terms carefully before concluding a sale.
+            Insurance is the subject matter of solicitation. Suasion Services Private Limited operates as a corporate distributor/agent. Product benefits, payouts, bonuses, and terms are governed strictly by the policy contract issued by our corporate insurance partners: <strong>Aditya Birla Sun Life Insurance</strong>, <strong>Life Insurance Corporation of India (LIC)</strong>, and <strong>Bajaj Allianz Life Insurance</strong>. Prospective clients should read the sales brochure and product terms carefully before concluding a sale.
           </p>
         </div>
 

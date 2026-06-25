@@ -60,7 +60,7 @@ const timelineData = [
     year: "2011",
     title: "Diversification into Suasion Services",
     subtitle: "Incorporated on 18 August 2011",
-    details: "To protect the accumulated wealth of our expanding clientele, we launched Suasion Services Private Limited. This vertical introduced specialized life insurance planning and estate protection auditing, partnering with Bajaj Allianz Life, LIC, and Aditya Birla Sun Life to secure family wealth from business liabilities."
+    details: "To protect the accumulated wealth of our expanding clientele, we launched Suasion Services Private Limited. This vertical introduced specialized life insurance planning and estate protection auditing, partnering with Aditya Birla Sun Life, LIC, and Bajaj Allianz Life. Demonstrating professional excellence, our family has achieved 3 MDRT (Million Dollar Round Table) qualifiers in the life insurance domain over the past 3 consecutive years, with Shubhaang Kataruka recognized as the youngest MDRT at ABSLI (Aditya Birla Sun Life Insurance)."
   },
   {
     year: "2017",

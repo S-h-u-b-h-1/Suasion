@@ -85,6 +85,8 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
   verification: {
     google: "28wzXtfgF8eLXJjdjdI0iaQoH0P1gWViRrvz2Fy_9lQ",
